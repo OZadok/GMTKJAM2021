@@ -104,6 +104,7 @@ MonoBehaviour:
   - {fileID: -8624203406078019949, guid: 8b629a2bb6a35904aa939ecb2592e940, type: 3}
   - {fileID: -751442825218943361, guid: 8b629a2bb6a35904aa939ecb2592e940, type: 3}
   randomizeRotation: 0
+  randomizeFlip: 0
 --- !u!95 &6700648478454389786
 Animator:
   serializedVersion: 3
@@ -333,7 +334,7 @@ GameObject:
   - component: {fileID: 4728743971183599556}
   - component: {fileID: 4728743971183599563}
   - component: {fileID: 6347826612652941482}
-  - component: {fileID: 7958459742348659520}
+  - component: {fileID: 1002933682570383274}
   m_Layer: 7
   m_Name: Peep
   m_TagString: Untagged
@@ -427,8 +428,8 @@ MonoBehaviour:
   OnStateChange:
     m_PersistentCalls:
       m_Calls: []
---- !u!61 &7958459742348659520
-BoxCollider2D:
+--- !u!58 &1002933682570383274
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -437,19 +438,9 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.25}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 0.625, y: 0.5}
-  m_EdgeRadius: 0
+  m_Radius: 0.25
