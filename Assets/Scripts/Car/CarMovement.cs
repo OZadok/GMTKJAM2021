@@ -10,6 +10,7 @@ public class CarMovement : MonoBehaviour
     [Tooltip("the center of mass of the car, the car will rotate around this location")]
     [SerializeField] private Transform centerOfMass;
     [SerializeField] private CarController carController;
+    [SerializeField] private CarAnimation carAnimation;
     [Header("Parameters")]
     [SerializeField] private float accelerationForce;
     [SerializeField] private float maxSpeed;
@@ -18,6 +19,8 @@ public class CarMovement : MonoBehaviour
     [Tooltip("this force should be greater than accelerationForce")]
     [SerializeField] private float brakeForce;
     [SerializeField] private float reverseMaxSpeed;
+
+    private bool isAligned;
 
     private void Awake()
     {
@@ -29,12 +32,22 @@ public class CarMovement : MonoBehaviour
         rigidbody2D.centerOfMass = centerOfMass.localPosition;
     }
 
+    private void Start()
+    {
+        isAligned = false;
+    }
+
     private void FixedUpdate()
     {
         ApplyEngineForce(carController.vertical);
         if (carController.vertical != 0)
         {
             ApplySteering(carController.horizontal);
+        }
+
+        if (carController.vertical == 0 || carController.horizontal == 0)
+        {
+            Align();
         }
     }
 
@@ -57,6 +70,8 @@ public class CarMovement : MonoBehaviour
             forceAmountToAdd = -velocityMagnitude + targetSpeed;
             forceAmountToAdd = Mathf.Min(forceAmountToAdd, accelerationForce);
             var force = transform.up * (forceAmountToAdd * inputDirection);
+            var perpDecForce = Vector3.Project(velocity, transform.right);
+            force += -perpDecForce;
             rigidbody2D.AddForce(force, ForceMode2D.Force);
         }
         else
@@ -89,5 +104,19 @@ public class CarMovement : MonoBehaviour
         var rotation = transform.rotation * rot;
         rigidbody2D.MoveRotation(rotation);
         rigidbody2D.velocity = rot * rigidbody2D.velocity;
+        isAligned = false;
+    }
+
+    private void Align()
+    {
+        var rotation = rigidbody2D.rotation;
+        if (rotation < 360f) rotation += 360f;
+        var frameAmount = carAnimation.FramesAmount;
+        var segmentSize = 360f / frameAmount;
+
+        var newAngle = Mathf.Round(rotation / (float) segmentSize) * segmentSize;
+        
+        rigidbody2D.MoveRotation(newAngle);
+        isAligned = true;
     }
 }
