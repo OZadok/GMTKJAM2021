@@ -244,22 +244,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateComponent: {fileID: 6347826612652941482}
-  spreadCollider: {fileID: 0}
+  spreadCollider: {fileID: 4252116758751870167}
   stateToSpread: 2
   contactFilter2D:
-    useTriggers: 0
-    useLayerMask: 0
+    useTriggers: 1
+    useLayerMask: 1
     useDepth: 0
     useOutsideDepth: 0
     useNormalAngle: 0
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 0
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
+      m_Bits: 896
+    minDepth: -1e+10
+    maxDepth: 1e+10
+    minNormalAngle: -1e+10
+    maxNormalAngle: 1e+10
   minTimeToSpread: 5
   maxTimeToSpread: 10
 --- !u!61 &4252116758751870167
