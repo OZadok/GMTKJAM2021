@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 7926069309064238031}
   - component: {fileID: 6707036934939740933}
   - component: {fileID: 7354163982538374682}
+  - component: {fileID: 6751272015774838816}
+  - component: {fileID: 2598753882077030492}
   m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
@@ -101,6 +103,37 @@ MonoBehaviour:
   - {fileID: 1228835631727819767, guid: 8b629a2bb6a35904aa939ecb2592e940, type: 3}
   - {fileID: -8624203406078019949, guid: 8b629a2bb6a35904aa939ecb2592e940, type: 3}
   - {fileID: -751442825218943361, guid: 8b629a2bb6a35904aa939ecb2592e940, type: 3}
+  randomizeRotation: 0
+--- !u!1818360609 &6751272015774838816
+RotationConstraint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354532744720177646}
+  m_Enabled: 1
+  m_Weight: 1
+  m_RotationAtRest: {x: 0, y: 0, z: 0}
+  m_RotationOffset: {x: 0, y: 0, z: 0}
+  m_AffectRotationX: 1
+  m_AffectRotationY: 1
+  m_AffectRotationZ: 1
+  m_IsContraintActive: 1
+  m_IsLocked: 0
+  m_Sources: []
+--- !u!114 &2598753882077030492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354532744720177646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c85a8394cb726843bc9de44244ed877, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  constraint: {fileID: 6751272015774838816}
 --- !u!1 &1671702259847432356
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,7 +322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbd018a9be7f35447872ca32f96ec7f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  castDistance: 2
+  castDistance: 0.8
   sidewalk:
     serializedVersion: 2
     m_Bits: 193
