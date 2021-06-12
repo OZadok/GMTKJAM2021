@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb69aa2d8f498d1469805473a77181f0, type: 3}
+  m_Name: UI_Keyboard
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 735321540243ca4498aae1397061e4ac, type: 3}
+  volume: 0.75
+  volumeVariance: 0
+  pitch: 1
+  pitchVariance: 0.2
+  loop: 0
+  mixerGroup: {fileID: 1129067442545850747, guid: 72d522ab6787e9543a7f24e7e3cc97fb, type: 2}
+  source: {fileID: 0}
