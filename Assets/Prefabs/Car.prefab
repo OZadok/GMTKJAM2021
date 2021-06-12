@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2449044147771235060}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: com
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,10 +41,10 @@ GameObject:
   - component: {fileID: 2449044148152757735}
   - component: {fileID: 2449044148152757753}
   - component: {fileID: 7470337706660172676}
-  - component: {fileID: 2449044148152757752}
   - component: {fileID: 2449044148152757734}
   - component: {fileID: 2103186130760567624}
-  m_Layer: 0
+  - component: {fileID: 4943312527513714338}
+  m_Layer: 8
   m_Name: Car
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,7 +81,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody2D: {fileID: 2449044148152757734}
   centerOfMass: {fileID: 2449044147771235060}
-  carController: {fileID: 2449044148152757752}
+  carController: {fileID: 0}
   accelerationForce: 20
   maxSpeed: 20
   turnFactor: 60
@@ -99,20 +99,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody2D: {fileID: 2449044148152757734}
   animator: {fileID: 2103186130760567624}
---- !u!114 &2449044148152757752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2449044148152757733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3262068137d3034db5e98037f96acb9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveForward: 0
-  horizontal: 0
 --- !u!50 &2449044148152757734
 Rigidbody2D:
   serializedVersion: 4
@@ -153,6 +139,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4943312527513714338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2449044148152757733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b44fea76252f1e4d900606737e3f796, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 0
+  OnStateChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3322857121470923874
 GameObject:
   m_ObjectHideFlags: 0
