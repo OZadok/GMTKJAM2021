@@ -535,8 +535,8 @@ MonoBehaviour:
   - dialogueLine: "The eyes of the global \rhigh-tech industry are set on the most
       unexpected of places today.\n"
     slideIndex: 0
-  - dialogueLine: The crime-ridden town of Ashford, Wyoming, home of less than 500
-      people,
+  - dialogueLine: The crime-ridden town of Ashford, Wyoming, home of less than a
+      hundred people,
     slideIndex: 1
   - dialogueLine: became the first place on Earth to replace their emergency service
       vehicles

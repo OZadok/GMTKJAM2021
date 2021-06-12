@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: UI_Keyboard
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 735321540243ca4498aae1397061e4ac, type: 3}
-  volume: 0.75
+  volume: 0.3
   volumeVariance: 0
   pitch: 1
   pitchVariance: 0.2
