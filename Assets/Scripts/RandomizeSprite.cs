@@ -5,6 +5,7 @@ using UnityEngine;
 public class RandomizeSprite : MonoBehaviour
 {
     [SerializeField] private List<Sprite> sprites;
+    [SerializeField] private List<Sprite> destroyed_sprites;
     [SerializeField] private bool randomizeRotation;
     [SerializeField] private bool randomizeFlip;
     private SpriteRenderer spriteRenderer;
@@ -53,5 +54,15 @@ public class RandomizeSprite : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0f,180f,transform.rotation.z);
             }
         }
+    }
+
+    public void DestroySprite()
+    {
+        spriteRenderer.sprite = destroyed_sprites[randIndex];
+    }
+
+    public void FixSprite()
+    {
+        spriteRenderer.sprite = sprites[randIndex];
     }
 }

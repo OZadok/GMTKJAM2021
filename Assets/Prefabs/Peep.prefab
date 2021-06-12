@@ -103,6 +103,7 @@ MonoBehaviour:
   - {fileID: 1228835631727819767, guid: 8b629a2bb6a35904aa939ecb2592e940, type: 3}
   - {fileID: -8624203406078019949, guid: 8b629a2bb6a35904aa939ecb2592e940, type: 3}
   - {fileID: -751442825218943361, guid: 8b629a2bb6a35904aa939ecb2592e940, type: 3}
+  destroyed_sprites: []
   randomizeRotation: 0
   randomizeFlip: 0
 --- !u!95 &6700648478454389786
@@ -418,7 +419,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 70
+  m_Mass: 35
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0

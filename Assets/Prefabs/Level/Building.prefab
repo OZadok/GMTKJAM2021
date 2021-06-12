@@ -294,6 +294,11 @@ MonoBehaviour:
   - {fileID: -4221377669135543708, guid: daaad6756a8ffd746bde873e561357be, type: 3}
   - {fileID: 3672322508436509216, guid: daaad6756a8ffd746bde873e561357be, type: 3}
   - {fileID: -7552807739342974831, guid: daaad6756a8ffd746bde873e561357be, type: 3}
+  destroyed_sprites:
+  - {fileID: -489469947290592541, guid: 4eff25e1d39560f48ab50024d1522805, type: 3}
+  - {fileID: -165341394514709605, guid: 4eff25e1d39560f48ab50024d1522805, type: 3}
+  - {fileID: -7229023414752558731, guid: 4eff25e1d39560f48ab50024d1522805, type: 3}
+  - {fileID: 1930162989561925762, guid: 4eff25e1d39560f48ab50024d1522805, type: 3}
   randomizeRotation: 0
   randomizeFlip: 0
 --- !u!331 &6502237518560774929
