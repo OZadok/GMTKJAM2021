@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class RandomizeSprite : MonoBehaviour
 {
@@ -11,6 +13,8 @@ public class RandomizeSprite : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private SpriteMask spriteMask;
     private int randIndex;
+    
+    [SerializeField] private StateComponent stateComponent;
 
     void Start()
     {
@@ -21,6 +25,8 @@ public class RandomizeSprite : MonoBehaviour
         {
             spriteMask.sprite = spriteRenderer.sprite;
         }
+        
+        stateComponent?.OnStateChange.AddListener(OnStateChangeEnter);
     }
 
     public void SetRandomSprite(List<Sprite> sprites)
@@ -64,5 +70,18 @@ public class RandomizeSprite : MonoBehaviour
     public void FixSprite()
     {
         spriteRenderer.sprite = sprites[randIndex];
+    }
+    
+    private void OnStateChangeEnter(State state)
+    {
+        switch (state)
+        {
+            case State.Destroyed:
+                DestroySprite();
+                break;
+            default:
+                FixSprite();
+                break;
+        }
     }
 }
