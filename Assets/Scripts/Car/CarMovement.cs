@@ -19,8 +19,13 @@ public class CarMovement : MonoBehaviour
     [Tooltip("the rotation in degrees per second")]
     [SerializeField] private float turnFactor;
     [Tooltip("this force should be greater than accelerationForce")]
-    [SerializeField] private float brakeForce;
     [SerializeField] private float reverseMaxSpeed;
+
+    [SerializeField] private float driftFactor = 0.6f;
+
+    [Header("Brake")] 
+    [SerializeField] private float brakeMaxDrag = 3f;
+    [SerializeField] private float brakeDragLerpT = 3f;
 
     private bool isAligned;
     private bool tierMarksOn;
@@ -42,16 +47,24 @@ public class CarMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        ApplyEngineForce(carController.vertical);
-        if (rigidbody2D.velocity.magnitude != 0)
+        if (carController.vertical != 0)
         {
-            ApplySteering(carController.horizontal);
+            ApplyEngineForce(carController.vertical);
+            CheckDrift(false);
+        }
+        else
+        {
+            Brake();
+            CheckDrift(true);
         }
 
-        if (carController.vertical == 0 || carController.horizontal == 0)
-        {
-            Align();
-        }
+        KillOrthogonalVelocity();
+        ApplySteering(carController.horizontal);
+
+        // if (carController.vertical == 0 || carController.horizontal == 0)
+        // {
+        //     Align();
+        // }
     }
 
     private void CheckDrift(bool isBrake)
@@ -87,63 +100,113 @@ public class CarMovement : MonoBehaviour
 
         tierMarksOn = false;
     }
+    
+    
 
     private void ApplyEngineForce(float verticalInput)
     {
-        float targetSpeed;
-        var velocity = rigidbody2D.velocity;
-        var velocityMagnitude = velocity.magnitude;
-        var inputDirection = Mathf.Sign(verticalInput);
-        bool isMoving = velocityMagnitude > 0.1f;
-        bool isMovingForward = Vector2.Angle(velocity, transform.up) < 90;
-        bool isRegularAcceleration = (isMovingForward || !isMoving) && verticalInput > 0;
-        bool isReverse = (!isMovingForward || !isMoving) && verticalInput < 0;
-        bool isBrake = !isRegularAcceleration && !isReverse;
-        float forceAmountToAdd;
-        
-        if (isRegularAcceleration || isReverse)
-        {
-            targetSpeed = isMovingForward ? maxSpeed : reverseMaxSpeed;
-            forceAmountToAdd = -velocityMagnitude + targetSpeed;
-            forceAmountToAdd = Mathf.Min(forceAmountToAdd, accelerationForce);
-            var force = transform.up * (forceAmountToAdd * inputDirection);
-            var perpDecForce = Vector3.Project(velocity, transform.right);
-            force += -perpDecForce;
-            rigidbody2D.AddForce(force, ForceMode2D.Force);
-        }
-        else
-        {
-            if (velocityMagnitude <= 0.1f)
-            {
-                rigidbody2D.velocity = Vector2.zero;
-            }
-            else
-            {
-                if (verticalInput != 0)
-                {
-                    forceAmountToAdd = Mathf.Max(velocityMagnitude, brakeForce);
-                }
-                else
-                {
-                    forceAmountToAdd = Mathf.Min(velocityMagnitude, brakeForce);
-                }
+        rigidbody2D.drag = 0;
 
-                var force = -velocity.normalized * (forceAmountToAdd);
-                rigidbody2D.AddForce(force, ForceMode2D.Force);
-            }
+        var velocityVsUp = Vector2.Dot(transform.up, rigidbody2D.velocity);
+
+        if (velocityVsUp > maxSpeed && verticalInput > 0)
+        {
+            return;
         }
-        CheckDrift(isReverse);
+        if (velocityVsUp < -reverseMaxSpeed && verticalInput < 0)
+        {
+            return;
+        }
+
+        if (rigidbody2D.velocity.sqrMagnitude > maxSpeed * maxSpeed && verticalInput > 0)
+        {
+            return;
+        }
+        
+        var engineForceVector = transform.up * (verticalInput * accelerationForce);
+        
+        rigidbody2D.AddForce(engineForceVector, ForceMode2D.Force);
+
+        // rigidbody2D.
+        //
+        // float targetSpeed;
+        // var velocity = rigidbody2D.velocity;
+        // var velocityMagnitude = velocity.magnitude;
+        // var inputDirection = Mathf.Sign(verticalInput);
+        // bool isMoving = velocityMagnitude > 0.1f;
+        // bool isMovingForward = Vector2.Angle(velocity, transform.up) < 90;
+        // bool isRegularAcceleration = (isMovingForward || !isMoving) && verticalInput > 0;
+        // bool isReverse = (!isMovingForward || !isMoving) && verticalInput < 0;
+        // bool isBrake = !isRegularAcceleration && !isReverse;
+        // float forceAmountToAdd;
+        //
+        // if (isRegularAcceleration || isReverse)
+        // {
+        //     targetSpeed = isMovingForward ? maxSpeed : reverseMaxSpeed;
+        //     forceAmountToAdd = -velocityMagnitude + targetSpeed;
+        //     forceAmountToAdd = Mathf.Min(forceAmountToAdd, accelerationForce);
+        //     var force = transform.up * (forceAmountToAdd * inputDirection);
+        //     var perpDecForce = Vector3.Project(velocity, transform.right);
+        //     force += -perpDecForce;
+        //     rigidbody2D.AddForce(force, ForceMode2D.Force);
+        // }
+        // else
+        // {
+        //     if (velocityMagnitude <= 0.1f)
+        //     {
+        //         rigidbody2D.velocity = Vector2.zero;
+        //     }
+        //     else
+        //     {
+        //         if (verticalInput != 0)
+        //         {
+        //             forceAmountToAdd = Mathf.Max(velocityMagnitude, brakeForce);
+        //         }
+        //         else
+        //         {
+        //             forceAmountToAdd = Mathf.Min(velocityMagnitude, brakeForce);
+        //         }
+        //
+        //         var force = -velocity.normalized * (forceAmountToAdd);
+        //         rigidbody2D.AddForce(force, ForceMode2D.Force);
+        //     }
+        // }
+        // CheckDrift(isReverse);
+    }
+
+    private void Brake()
+    {
+        rigidbody2D.drag = Mathf.Lerp(rigidbody2D.drag, brakeMaxDrag, Time.fixedDeltaTime * brakeDragLerpT);
     }
 
     private void ApplySteering(float horizontalInput)
     {
-        var rotationAngle = -horizontalInput * turnFactor * Time.fixedDeltaTime;
+        var direction = Mathf.Sign(Vector2.Dot(rigidbody2D.velocity, transform.up));
+        var minSpeedBeforeAllowTurningFactor = rigidbody2D.velocity.magnitude / (maxSpeed / 2f);
+        minSpeedBeforeAllowTurningFactor = Mathf.Clamp01(minSpeedBeforeAllowTurningFactor);
+        
+        var rotationAngle = -horizontalInput * turnFactor * Time.fixedDeltaTime * minSpeedBeforeAllowTurningFactor * direction;
         var rot = Quaternion.Euler(0, 0, rotationAngle);
         var rotation = transform.rotation * rot;
         rigidbody2D.MoveRotation(rotation);
-        rigidbody2D.velocity = rot * rigidbody2D.velocity;
-        isAligned = false;
-        directionArrow.rotation = rotation;
+        
+        // var rotationAngle = -horizontalInput * turnFactor * Time.fixedDeltaTime;
+        // var rot = Quaternion.Euler(0, 0, rotationAngle);
+        // var rotation = transform.rotation * rot;
+        // rigidbody2D.MoveRotation(rotation);
+        // rigidbody2D.velocity = rot * rigidbody2D.velocity;
+        // isAligned = false;
+        // directionArrow.rotation = rotation;
+    }
+
+    private void KillOrthogonalVelocity()
+    {
+        var up = transform.up;
+        var right = transform.right;
+        var forwardVelocity = up * Vector2.Dot(rigidbody2D.velocity, up);
+        var rightVelocity = right * Vector2.Dot(rigidbody2D.velocity, right);
+
+        rigidbody2D.velocity = forwardVelocity + rightVelocity * driftFactor;
     }
 
     private void Align()

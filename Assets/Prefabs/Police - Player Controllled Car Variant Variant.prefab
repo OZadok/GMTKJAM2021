@@ -31,6 +31,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Police - Player Controllled Car Variant Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 6195702427369041774, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
+      propertyPath: m_Mass
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 6195702427369041775, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -76,20 +80,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6195702427369041777, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
-      propertyPath: maxSpeed
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 6195702427369041777, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
       propertyPath: brakeForce
       value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 6195702427369041777, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
-      propertyPath: turnFactor
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 6195702427369041777, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
-      propertyPath: accelerationForce
-      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6268644541114308390, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
       propertyPath: m_Size.x
