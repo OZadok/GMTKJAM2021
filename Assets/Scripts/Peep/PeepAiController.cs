@@ -22,8 +22,6 @@ public class PeepAiController : MonoBehaviour
 
     private bool lastSideHitisRight;
 
-    private bool tierMarksOn;
-
     private void FixedUpdate()
     {
         var hitForward = GetHit(ForwardDirection);
@@ -37,28 +35,6 @@ public class PeepAiController : MonoBehaviour
         {
             lastSideHitisRight = hitRight;
         }
-    }
-
-    private void StartTireEmitter()
-    {
-        if (tierMarksOn) return;
-        foreach (TrailRenderer trailRenderer in tireMarks)
-        {
-            trailRenderer.emitting = true;
-        }
-
-        tierMarksOn = true;
-    }
-
-    private void StopTireEmitter()
-    {
-        if (!tierMarksOn) return;
-        foreach (TrailRenderer trailRenderer in tireMarks)
-        {
-            trailRenderer.emitting = false;
-        }
-
-        tierMarksOn = false;
     }
 
     void OnDrawGizmosSelected()
