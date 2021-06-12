@@ -43,3 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e17bc075899f644a8976afae84d4824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingDelay: 0
+  timeToTriggerSimulation: 10
+  randomOffset: 5
