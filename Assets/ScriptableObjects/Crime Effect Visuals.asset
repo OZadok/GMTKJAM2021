@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Crime Effect Visuals
   m_EditorClassIdentifier: 
   Material: {fileID: 2100000, guid: bd6d3eecc4ee5f043ab09f1a670f7fb2, type: 2}
-  gameObjectsToSpawn: []
+  gameObjectsToSpawn:
+  - {fileID: 8490590574527581939, guid: 37ee84e695e0ecb448bf598472d332da, type: 3}

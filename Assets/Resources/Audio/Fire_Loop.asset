@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb69aa2d8f498d1469805473a77181f0, type: 3}
-  m_Name: Fire Loop
+  m_Name: Fire_Loop
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 28a8628ca1e3c884da9f02a49c94557b, type: 3}
   volume: 0.6
