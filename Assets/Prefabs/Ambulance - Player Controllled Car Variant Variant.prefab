@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: stateToFix
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4470216617220353791, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
+      propertyPath: m_Radius
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6195702427369041773, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
       propertyPath: m_Name
       value: Ambulance - Player Controllled Car Variant Variant

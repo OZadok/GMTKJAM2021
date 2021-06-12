@@ -13968,6 +13968,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: StateManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8358605331016030805, guid: 1839e6f11d60f8041aea5b38fad9dc22, type: 3}
+      propertyPath: startFireTime
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8358605331016030805, guid: 1839e6f11d60f8041aea5b38fad9dc22, type: 3}
+      propertyPath: startCriminalTime
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 8358605331016030806, guid: 1839e6f11d60f8041aea5b38fad9dc22, type: 3}
       propertyPath: m_RootOrder
       value: 0

@@ -160,8 +160,8 @@ MonoBehaviour:
     maxDepth: 1e+10
     minNormalAngle: -1e+10
     maxNormalAngle: 1e+10
-  minTimeToSpread: 10
-  maxTimeToSpread: 15
+  minTimeToSpread: 15
+  maxTimeToSpread: 20
 --- !u!61 &725713921072077854
 BoxCollider2D:
   m_ObjectHideFlags: 0
