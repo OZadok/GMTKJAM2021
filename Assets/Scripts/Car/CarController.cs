@@ -5,6 +5,6 @@ using UnityEngine;
 
 public abstract class CarController : MonoBehaviour
 {
-	public bool moveForward;
+	public float vertical;
 	public float horizontal;
 }

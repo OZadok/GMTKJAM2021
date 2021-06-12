@@ -7,7 +7,7 @@ public class CarHumanController : CarController
 {
 	private void Update()
 	{
-		moveForward = Input.GetAxis("Vertical") > 0.4f;
+		vertical = Input.GetAxis("Vertical");
 		horizontal = Input.GetAxis("Horizontal");
 	}
 }

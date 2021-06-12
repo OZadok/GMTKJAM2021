@@ -15,6 +15,9 @@ public class CarMovement : MonoBehaviour
     [SerializeField] private float maxSpeed;
     [Tooltip("the rotation in degrees per second")]
     [SerializeField] private float turnFactor;
+    [Tooltip("this force should be greater than accelerationForce")]
+    [SerializeField] private float brakeForce;
+    [SerializeField] private float reverseMaxSpeed;
 
     private void Awake()
     {
@@ -28,20 +31,55 @@ public class CarMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        ApplyEngineForce(carController.moveForward);
-        ApplySteering(carController.horizontal);
+        ApplyEngineForce(carController.vertical);
+        if (carController.vertical != 0)
+        {
+            ApplySteering(carController.horizontal);
+        }
     }
 
-    private void ApplyEngineForce(bool input)
+    private void ApplyEngineForce(float verticalInput)
     {
-        if (!input)
+        float targetSpeed;
+        var velocity = rigidbody2D.velocity;
+        var velocityMagnitude = velocity.magnitude;
+        var inputDirection = Mathf.Sign(verticalInput);
+        bool isMoving = velocityMagnitude > 0.1f;
+        bool isMovingForward = Vector2.Angle(velocity, transform.up) < 90;
+        bool isRegularAcceleration = (isMovingForward || !isMoving) && verticalInput > 0;
+        bool isReverse = (!isMovingForward || !isMoving) && verticalInput < 0;
+        bool isBrake = !isRegularAcceleration && !isReverse;
+        float forceAmountToAdd;
+        
+        if (isRegularAcceleration || isReverse)
         {
-            return;
+            targetSpeed = isMovingForward ? maxSpeed : reverseMaxSpeed;
+            forceAmountToAdd = -velocityMagnitude + targetSpeed;
+            forceAmountToAdd = Mathf.Min(forceAmountToAdd, accelerationForce);
+            var force = transform.up * (forceAmountToAdd * inputDirection);
+            rigidbody2D.AddForce(force, ForceMode2D.Force);
         }
-        var forceAmountToAdd = -rigidbody2D.velocity.magnitude + maxSpeed;
-        forceAmountToAdd = Mathf.Min(forceAmountToAdd, accelerationForce);
-        var force = transform.up * forceAmountToAdd;
-        rigidbody2D.AddForce(force, ForceMode2D.Force);
+        else
+        {
+            if (velocityMagnitude <= 0.1f)
+            {
+                rigidbody2D.velocity = Vector2.zero;
+            }
+            else
+            {
+                if (verticalInput != 0)
+                {
+                    forceAmountToAdd = Mathf.Max(velocityMagnitude, brakeForce);
+                }
+                else
+                {
+                    forceAmountToAdd = Mathf.Min(velocityMagnitude, brakeForce);
+                }
+
+                var force = -velocity.normalized * (forceAmountToAdd);
+                rigidbody2D.AddForce(force, ForceMode2D.Force);
+            }
+        }
     }
 
     private void ApplySteering(float horizontalInput)

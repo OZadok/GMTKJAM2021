@@ -85,6 +85,8 @@ MonoBehaviour:
   accelerationForce: 20
   maxSpeed: 20
   turnFactor: 60
+  brakeForce: 60
+  reverseMaxSpeed: 10
 --- !u!114 &7470337706660172676
 MonoBehaviour:
   m_ObjectHideFlags: 0
