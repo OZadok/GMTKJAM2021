@@ -73,6 +73,10 @@ public class StateSpreader : MonoBehaviour
     [ContextMenu("Spread")]
     private bool Spread()
     {
+        var value = false;
+        var queriesHitTriggers = Physics2D.queriesHitTriggers;
+        Physics2D.queriesHitTriggers = true;
+        
         var results = new List<Collider2D>();
         var amount = spreadCollider.OverlapCollider(contactFilter2D, results);
         if (amount > 0)
@@ -84,11 +88,14 @@ public class StateSpreader : MonoBehaviour
                 if (sc.CanMoveToState(stateToSpread))
                 {
                     sc.CurrentState = stateToSpread;
-                    return true;
+                    
+                    value = true;
+                    break;
                 }
             }
         }
 
-        return false;
+        Physics2D.queriesHitTriggers = queriesHitTriggers;
+        return value;
     }
 }

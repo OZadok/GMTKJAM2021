@@ -145,12 +145,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateComponent: {fileID: 1968997527236220900}
   spreadCollider: {fileID: 725713921072077854}
-  spreadGetter:
-    serializedVersion: 2
-    m_Bits: 896
   stateToSpread: 1
   contactFilter2D:
-    useTriggers: 0
+    useTriggers: 1
     useLayerMask: 1
     useDepth: 0
     useOutsideDepth: 0
@@ -163,6 +160,8 @@ MonoBehaviour:
     maxDepth: 1e+10
     minNormalAngle: -1e+10
     maxNormalAngle: 1e+10
+  minTimeToSpread: 5
+  maxTimeToSpread: 10
 --- !u!61 &725713921072077854
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -187,7 +186,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.5, y: 2.5}
+  m_Size: {x: 3.5, y: 3.5}
   m_EdgeRadius: 0
 --- !u!1 &8304229295536068576
 GameObject:
@@ -296,7 +295,6 @@ MonoBehaviour:
   - {fileID: 3672322508436509216, guid: daaad6756a8ffd746bde873e561357be, type: 3}
   - {fileID: -7552807739342974831, guid: daaad6756a8ffd746bde873e561357be, type: 3}
   randomizeRotation: 0
-  randomizeFlip: 0
   randomizeFlip: 0
 --- !u!331 &6502237518560774929
 SpriteMask:

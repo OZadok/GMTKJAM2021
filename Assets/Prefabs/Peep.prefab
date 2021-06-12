@@ -247,7 +247,7 @@ MonoBehaviour:
   spreadCollider: {fileID: 4252116758751870167}
   stateToSpread: 2
   contactFilter2D:
-    useTriggers: 0
+    useTriggers: 1
     useLayerMask: 1
     useDepth: 0
     useOutsideDepth: 0
