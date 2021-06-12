@@ -29352,7 +29352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3262068137d3034db5e98037f96acb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveForward: 0
+  vertical: 0
   horizontal: 0
 --- !u!114 &1550923155
 MonoBehaviour:
@@ -29372,6 +29372,8 @@ MonoBehaviour:
   accelerationForce: 25
   maxSpeed: 25
   turnFactor: 60
+  brakeForce: 0
+  reverseMaxSpeed: 0
 --- !u!212 &1550923156
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -33037,6 +33039,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a06d68dc1d3ef3b40a59d2d27136d0f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foliage: {fileID: 3963812303891317806, guid: 0a629aad7bf3fca47bad94b678da0fcf, type: 3}
+  numberOfObjects: 100
 --- !u!1001 &1857275856
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ public class RandomizeSprite : MonoBehaviour
 {
     [SerializeField] private List<Sprite> sprites;
     [SerializeField] private bool randomizeRotation;
+    [SerializeField] private bool randomizeFlip;
     private SpriteRenderer spriteRenderer;
     private int randIndex;
 
@@ -17,11 +18,11 @@ public class RandomizeSprite : MonoBehaviour
 
     public void SetRandomSprite(List<Sprite> sprites)
     {
-        randIndex = Random.RandomRange(0, sprites.Count);
+        randIndex = Random.Range(0, sprites.Count);
         spriteRenderer.sprite = sprites[randIndex];
         if (randomizeRotation)
         {
-            int randomRotation = Random.RandomRange(0, 3);
+            int randomRotation = Random.Range(0, 3);
             switch (randomRotation)
             {
                 case 0:
@@ -36,6 +37,14 @@ public class RandomizeSprite : MonoBehaviour
                 case 3:
                     transform.rotation = Quaternion.Euler(0f, 0f, 270);
                     break;
+            }
+        }
+        if (randomizeFlip)
+        {
+            int randomFlip = Random.Range(0, 2);
+            if (randomFlip == 1)
+            {
+                spriteRenderer.flipX = true;
             }
         }
     }
