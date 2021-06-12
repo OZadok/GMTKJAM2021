@@ -11,6 +11,8 @@ public class CarMovement : MonoBehaviour
     [SerializeField] private Transform centerOfMass;
     [SerializeField] private CarController carController;
     [SerializeField] private CarAnimation carAnimation;
+    [SerializeField] private TrailRenderer[] tireMarks;
+    [SerializeField] private Transform directionArrow;
     [Header("Parameters")]
     [SerializeField] private float accelerationForce;
     [SerializeField] private float maxSpeed;
@@ -21,6 +23,7 @@ public class CarMovement : MonoBehaviour
     [SerializeField] private float reverseMaxSpeed;
 
     private bool isAligned;
+    private bool tierMarksOn;
 
     private void Awake()
     {
@@ -40,7 +43,7 @@ public class CarMovement : MonoBehaviour
     private void FixedUpdate()
     {
         ApplyEngineForce(carController.vertical);
-        if (carController.vertical != 0)
+        if (rigidbody2D.velocity.magnitude != 0)
         {
             ApplySteering(carController.horizontal);
         }
@@ -49,6 +52,40 @@ public class CarMovement : MonoBehaviour
         {
             Align();
         }
+    }
+
+    private void CheckDrift(bool isBrake)
+    {
+        if (isBrake)
+        {
+            StartTireEmitter();
+        }
+        else
+        {
+            StopTireEmitter();
+        }
+    }
+
+    private void StartTireEmitter()
+    {
+        if (tierMarksOn) return;
+        foreach (TrailRenderer trailRenderer in tireMarks)
+        {
+            trailRenderer.emitting = true;
+        }
+
+        tierMarksOn = true;
+    }
+
+    private void StopTireEmitter()
+    {
+        if (!tierMarksOn) return;
+        foreach (TrailRenderer trailRenderer in tireMarks)
+        {
+            trailRenderer.emitting = false;
+        }
+
+        tierMarksOn = false;
     }
 
     private void ApplyEngineForce(float verticalInput)
@@ -95,6 +132,7 @@ public class CarMovement : MonoBehaviour
                 rigidbody2D.AddForce(force, ForceMode2D.Force);
             }
         }
+        CheckDrift(isReverse);
     }
 
     private void ApplySteering(float horizontalInput)
@@ -105,6 +143,7 @@ public class CarMovement : MonoBehaviour
         rigidbody2D.MoveRotation(rotation);
         rigidbody2D.velocity = rot * rigidbody2D.velocity;
         isAligned = false;
+        directionArrow.rotation = rotation;
     }
 
     private void Align()

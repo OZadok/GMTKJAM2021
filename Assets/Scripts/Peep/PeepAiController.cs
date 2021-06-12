@@ -8,6 +8,9 @@ public class PeepAiController : MonoBehaviour
     public bool toMoveForward { get; private set; }
     public float horizontal { get; private set; }
 
+    [Header("References")]
+    [SerializeField] private TrailRenderer[] tireMarks;
+
     [Header("Parameters")] 
     [SerializeField] private float castDistance;
 
@@ -18,6 +21,8 @@ public class PeepAiController : MonoBehaviour
     private Vector2 LeftDirection => transform.TransformDirection(-1, 1, 0);
 
     private bool lastSideHitisRight;
+
+    private bool tierMarksOn;
 
     private void FixedUpdate()
     {
@@ -33,7 +38,29 @@ public class PeepAiController : MonoBehaviour
             lastSideHitisRight = hitRight;
         }
     }
-    
+
+    private void StartTireEmitter()
+    {
+        if (tierMarksOn) return;
+        foreach (TrailRenderer trailRenderer in tireMarks)
+        {
+            trailRenderer.emitting = true;
+        }
+
+        tierMarksOn = true;
+    }
+
+    private void StopTireEmitter()
+    {
+        if (!tierMarksOn) return;
+        foreach (TrailRenderer trailRenderer in tireMarks)
+        {
+            trailRenderer.emitting = false;
+        }
+
+        tierMarksOn = false;
+    }
+
     void OnDrawGizmosSelected()
     {
         DrawRay(ForwardDirection);
