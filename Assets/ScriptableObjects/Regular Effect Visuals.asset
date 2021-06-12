@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5383ecf6b61708b43bd9c6ee88951989, type: 3}
   m_Name: Regular Effect Visuals
   m_EditorClassIdentifier: 
-  Material: {fileID: 2100000, guid: 60c37a9ca08cb3943ab92852fa28be9d, type: 2}
+  Material: {fileID: 2100000, guid: d4ad336173ca2b74cba8e5cec53041e8, type: 2}
   gameObjectsToSpawn: []
