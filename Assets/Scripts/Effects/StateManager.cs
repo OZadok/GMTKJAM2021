@@ -14,8 +14,10 @@ public class StateManager : MonoBehaviour
     [Header("Parameters"), SerializeField]
     private float startingDelay = 10f;
     [SerializeField]
-    private float timeToTriggerSimulation = 3f;
+    private float startFireTime = 3f;
     [SerializeField]
+    private float startCriminalTime = 3f;
+    [SerializeField, Tooltip("Adds random offset to all timers, ranging from +0 to this value.")]
     private float randomOffset = 2f;
 
     private void Awake()
@@ -48,15 +50,15 @@ public class StateManager : MonoBehaviour
     private IEnumerator DoStart()
     {
         yield return new WaitForSeconds(startingDelay);
-        StartCoroutine(EffectCoroutine(fireStateSpreaders));
-        StartCoroutine(EffectCoroutine(crimeStateSpreaders));
+        StartCoroutine(EffectCoroutine(fireStateSpreaders, startFireTime));
+        StartCoroutine(EffectCoroutine(crimeStateSpreaders, startCriminalTime));
     }
 
-    private IEnumerator EffectCoroutine(List<StateSpreader> stateSpreaders)
+    private IEnumerator EffectCoroutine(List<StateSpreader> stateSpreaders, float systemTimer)
     {
         while (true)
         {
-            yield return new WaitForSeconds(timeToTriggerSimulation + UnityEngine.Random.Range(0, randomOffset));
+            yield return new WaitForSeconds(systemTimer + UnityEngine.Random.Range(0, randomOffset));
             print("TRIGGERED");
             stateSpreaders.Shuffle();
             foreach (var stateSpreader in stateSpreaders)

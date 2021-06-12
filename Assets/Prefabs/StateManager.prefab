@@ -44,5 +44,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingDelay: 0
-  timeToTriggerSimulation: 10
+  startFireTime: 10
+  startCriminalTime: 10
   randomOffset: 5
