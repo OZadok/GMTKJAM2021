@@ -65,9 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'It''s burning! Call 911!
-
-'
+  m_text: kus rabak i am on fire
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e8abe14f98c6b6e4587baf1b12b141be, type: 2}
   m_sharedMaterial: {fileID: 4035418378863244914, guid: e8abe14f98c6b6e4587baf1b12b141be, type: 2}
@@ -101,7 +99,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 8
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 4
   m_VerticalAlignment: 4096
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -150,6 +148,7 @@ GameObject:
   - component: {fileID: 7988925046471721080}
   - component: {fileID: 7988925046471721082}
   - component: {fileID: 7988925046471721083}
+  - component: {fileID: 5100280705880781677}
   m_Layer: 5
   m_Name: Text Box
   m_TagString: Untagged
@@ -172,9 +171,9 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -112, y: 144}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -126.58, y: -35}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7988925046471721081
@@ -265,7 +264,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 4
+  m_ChildAlignment: 2
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
@@ -274,3 +273,16 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &5100280705880781677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7988925046471721028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efed818a2cb26c241b31be491c6c91a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyTime: 2
