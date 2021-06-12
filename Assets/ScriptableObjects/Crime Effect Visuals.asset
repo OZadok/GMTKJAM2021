@@ -10,8 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5383ecf6b61708b43bd9c6ee88951989, type: 3}
-  m_Name: Fire Effect Visuals
+  m_Name: Crime Effect Visuals
   m_EditorClassIdentifier: 
-  Material: {fileID: 2100000, guid: ba4683ace8a8d634b86468205ce55d36, type: 2}
-  gameObjectsToSpawn:
-  - {fileID: 8490590574527581939, guid: 0fd9257bf33acea4fb077a8e05b084b8, type: 3}
+  Material: {fileID: 2100000, guid: bd6d3eecc4ee5f043ab09f1a670f7fb2, type: 2}
+  gameObjectsToSpawn: []

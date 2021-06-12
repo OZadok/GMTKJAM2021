@@ -7,16 +7,18 @@ using Random = UnityEngine.Random;
 public class StateSpreader : MonoBehaviour
 {
     [Header("References")] 
-    [SerializeField] private StateComponent stateComponent;
+    [SerializeField] public StateComponent stateComponent;
     [SerializeField] private Collider2D spreadCollider;
     
     [Header("Parameters")]
     // [SerializeField] private LayerMask spreadGetter;
-    [SerializeField] private State stateToSpread;
+    [SerializeField] public State stateToSpread;
     [SerializeField] private ContactFilter2D contactFilter2D;
     
     [SerializeField] private float minTimeToSpread = 5f;
     [SerializeField] private float maxTimeToSpread = 10f;
+
+    public bool isSpreading => stateComponent.CurrentState == stateToSpread;
 
     // private void OnTriggerEnter2D(Collider2D other)
     // {
@@ -37,6 +39,7 @@ public class StateSpreader : MonoBehaviour
     private void Start()
     {
         stateComponent.OnStateChange.AddListener(OnStateChangeEnter);
+        StateManager.Instance.Sign(this);
     }
 
     private void OnStateChangeEnter(State state)
@@ -53,6 +56,7 @@ public class StateSpreader : MonoBehaviour
     private void OnStateChangeExit(State state)
     {
         stateComponent.OnStateChange.RemoveListener(OnStateChangeExit);
+        StopAllCoroutines();
         stateComponent.OnStateChange.AddListener(OnStateChangeEnter);
     }
 
