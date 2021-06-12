@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fire_Ignite
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: fa9c5a29d47c1c94e93b14bf5e91a5a6, type: 3}
-  volume: 0.8
+  volume: 0.6
   volumeVariance: 0
   pitch: 1
   pitchVariance: 0.1

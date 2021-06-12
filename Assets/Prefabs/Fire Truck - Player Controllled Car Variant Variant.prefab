@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3199857867580582800, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
+      propertyPath: stateToFix
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6195702427369041773, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
       propertyPath: m_Name
       value: Fire Truck - Player Controllled Car Variant Variant
@@ -91,6 +95,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 22100000, guid: f3ae6ba79549f2c4fa4ffdb854e48ad6, type: 2}
+    - target: {fileID: 8259289187441301720, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
+      propertyPath: stateToFix
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8984047880559301948, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
       propertyPath: m_Sprite
       value: 

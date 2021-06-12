@@ -11,9 +11,12 @@ public class StateManager : MonoBehaviour
     private List<StateSpreader> fireStateSpreaders;
     private List<StateSpreader> crimeStateSpreaders;
 
-    [Header("Parameters")] 
-    // private float timeToStartFire = 3f;
-    private float timeToStartEffect = 3f;
+    [Header("Parameters"), SerializeField]
+    private float startingDelay = 10f;
+    [SerializeField]
+    private float timeToTriggerSimulation = 3f;
+    [SerializeField]
+    private float randomOffset = 2f;
 
     private void Awake()
     {
@@ -26,8 +29,7 @@ public class StateManager : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(EffectCoroutine(fireStateSpreaders));
-        StartCoroutine(EffectCoroutine(crimeStateSpreaders));
+        StartCoroutine(DoStart());
     }
 
     public void Sign(StateSpreader stateSpreader)
@@ -43,11 +45,19 @@ public class StateManager : MonoBehaviour
         }
     }
 
+    private IEnumerator DoStart()
+    {
+        yield return new WaitForSeconds(startingDelay);
+        StartCoroutine(EffectCoroutine(fireStateSpreaders));
+        StartCoroutine(EffectCoroutine(crimeStateSpreaders));
+    }
+
     private IEnumerator EffectCoroutine(List<StateSpreader> stateSpreaders)
     {
         while (true)
         {
-            yield return new WaitForSeconds(timeToStartEffect);
+            yield return new WaitForSeconds(timeToTriggerSimulation + UnityEngine.Random.Range(0, randomOffset));
+            print("TRIGGERED");
             stateSpreaders.Shuffle();
             foreach (var stateSpreader in stateSpreaders)
             {

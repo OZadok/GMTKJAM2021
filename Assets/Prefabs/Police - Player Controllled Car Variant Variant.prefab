@@ -19,6 +19,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3199857867580582800, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
+      propertyPath: stateToFix
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5685658845794777689, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -107,6 +111,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 22100000, guid: f21ecdc4e6ff1684bb2498a014cdcba4, type: 2}
+    - target: {fileID: 8259289187441301720, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
+      propertyPath: stateToFix
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8397009107051355244, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
       propertyPath: m_RootOrder
       value: 4

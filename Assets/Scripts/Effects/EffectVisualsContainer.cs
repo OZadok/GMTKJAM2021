@@ -6,6 +6,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class EffectVisualsContainer : ScriptableObject
 {
+	public EffectVisuals regularEffect;
 	public EffectVisuals fireEffect;
 	public EffectVisuals criminalEffect;
 	
@@ -21,7 +22,7 @@ public class EffectVisualsContainer : ScriptableObject
 	{
 		return state switch
 		{
-			// State.Regular => temp,
+			State.Regular => regularEffect,
 			State.OnFire => fireEffect,
 			State.Criminal => criminalEffect,
 			// State.Damaged => temp,

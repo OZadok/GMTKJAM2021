@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fire_Loop
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 28a8628ca1e3c884da9f02a49c94557b, type: 3}
-  volume: 0.6
+  volume: 0.5
   volumeVariance: 0
   pitch: 1
   pitchVariance: 0

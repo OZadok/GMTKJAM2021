@@ -85,7 +85,7 @@ public class StateSpreader : MonoBehaviour
             foreach (var result in results)
             {
                 var sc = result.GetComponent<StateComponent>();
-                if (sc.CanMoveToState(stateToSpread))
+                if (sc && sc.CanMoveToState(stateToSpread))
                 {
                     sc.CurrentState = stateToSpread;
                     
