@@ -244,10 +244,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateComponent: {fileID: 6347826612652941482}
-  spreadGetter:
-    serializedVersion: 2
-    m_Bits: 896
+  spreadCollider: {fileID: 4252116758751870167}
   stateToSpread: 2
+  contactFilter2D:
+    useTriggers: 0
+    useLayerMask: 1
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 896
+    minDepth: -100000000
+    maxDepth: 100000000
+    minNormalAngle: -100000000
+    maxNormalAngle: 100000000
+  minTimeToSpread: 5
+  maxTimeToSpread: 10
 --- !u!61 &4252116758751870167
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -387,6 +401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbd018a9be7f35447872ca32f96ec7f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tireMarks: []
   castDistance: 0.8
   sidewalk:
     serializedVersion: 2

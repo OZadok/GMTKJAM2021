@@ -7,24 +7,26 @@ using UnityEngine;
 public class EffectVisualsContainer : ScriptableObject
 {
 	public EffectVisuals fireEffect;
+	public EffectVisuals criminalEffect;
+	
+	private EffectVisuals temp;
 
 	public void OnStateChange(State state, GameObject gameObject)
 	{
-		switch (state)
+		var ev = GetEffectVisuals(state);
+		ev.Set(gameObject);
+	}
+
+	private EffectVisuals GetEffectVisuals(State state)
+	{
+		return state switch
 		{
-			case State.Regular:
-				break;
-			case State.OnFire:
-				fireEffect.Set(gameObject);
-				break;
-			case State.Criminal:
-				break;
-			case State.Damaged:
-				break;
-			case State.Destroyed:
-				break;
-			default:
-				break;
-		}
+			// State.Regular => temp,
+			State.OnFire => fireEffect,
+			State.Criminal => criminalEffect,
+			// State.Damaged => temp,
+			// State.Destroyed => temp,
+			// _ => temp
+		};
 	}
 }
