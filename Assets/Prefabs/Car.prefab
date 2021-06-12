@@ -159,6 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
+  effectVisualsContainer: {fileID: 11400000, guid: 6d4244d7d7b824c409913e14bc30928a, type: 2}
   OnStateChange:
     m_PersistentCalls:
       m_Calls: []
