@@ -19,19 +19,17 @@ public class IntroManager : MonoBehaviour
     public string nextScene = "";
 
     [Header("Audio")]
-    public AudioClip keyboardClick;
-    public AudioClip whiteNoise;
+    public Sound keyboardClick;
+    public Sound whiteNoise;
 
     // PRIVATES
     private string tempTxt;
     private int lineIndex = 0;
     private bool introEnded = false;
-    private AudioSource source;
 
     void Start()
     {
         TextUI.text = "";
-        source = GetComponent<AudioSource>();
 
         StartCoroutine(StartIntro());
     }
@@ -40,7 +38,7 @@ public class IntroManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space) && !introEnded)
         {
-            source.PlayOneShot(keyboardClick);
+            AudioManager.instance.Play(keyboardClick, false);
 
             StopAllCoroutines();
             tempTxt = "";
@@ -88,11 +86,11 @@ public class IntroManager : MonoBehaviour
     {
         TextUI.text = "";
         introEnded = true;
-        source.PlayOneShot(whiteNoise);
+        AudioManager.instance.Play(whiteNoise, false);
 
         slideshowImage.sprite = slides[5];
         yield return new WaitForSeconds(1f);
-
+        AudioManager.instance.StopAll();
         // THIS ENDS THE INTRO
         if (nextScene != "")
             SceneManager.LoadScene(nextScene);
@@ -104,12 +102,12 @@ public class IntroManager : MonoBehaviour
     {
         introEnded = true;
         TextUI.text = "";
-        source.PlayOneShot(whiteNoise);
+        AudioManager.instance.Play(whiteNoise, false);
 
         slideshowImage.sprite = slides[5];
         yield return new WaitForSeconds(.5f);
+        AudioManager.instance.StopAll();
         introEnded = false;
-        source.Stop();
         ShowSlide();
     }
 }
