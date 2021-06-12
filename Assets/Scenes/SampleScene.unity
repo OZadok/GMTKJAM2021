@@ -24832,7 +24832,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1703999202402274634, guid: d354da6c07e372f4e8bde97614461beb, type: 3}
       propertyPath: driftFactor
-      value: 0.8
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 1703999202402274634, guid: d354da6c07e372f4e8bde97614461beb, type: 3}
       propertyPath: brakeMaxDrag
