@@ -21,6 +21,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 624577408114694068, guid: 2eb15a0f5ce14f54bacd78ff250902ab, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2449044148152757733, guid: 2eb15a0f5ce14f54bacd78ff250902ab, type: 3}
       propertyPath: m_Name
       value: Player Controllled Car Variant
