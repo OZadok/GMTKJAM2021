@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2331016481965467778}
   - component: {fileID: 69827094103302691}
   - component: {fileID: 78568083755690534}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pavement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,3 +101,4 @@ MonoBehaviour:
   - {fileID: 3667364698070961819, guid: 18ad2091beb87e145a289e70cedb4805, type: 3}
   - {fileID: 5634217477752118358, guid: 18ad2091beb87e145a289e70cedb4805, type: 3}
   randomizeRotation: 1
+  randomizeFlip: 0

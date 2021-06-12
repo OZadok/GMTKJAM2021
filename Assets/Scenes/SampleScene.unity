@@ -5852,7 +5852,7 @@ GameObject:
   - component: {fileID: 473756704}
   - component: {fileID: 473756703}
   m_Layer: 0
-  m_Name: spw_welcome
+  m_Name: spr_welcome
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10240,7 +10240,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11225,7 +11224,7 @@ ParticleSystem:
     m_BurstCount: 0
     m_Bursts: []
   SizeModule:
-    enabled: 1
+    enabled: 0
     curve:
       serializedVersion: 2
       minMaxState: 1
@@ -14179,7 +14178,7 @@ ParticleSystem:
         m_RotationOrder: 4
     maxLights: 20
   TrailModule:
-    enabled: 1
+    enabled: 0
     mode: 0
     ratio: 0.3
     lifetime:
@@ -19249,7 +19248,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -23188,7 +23186,7 @@ ParticleSystem:
         m_RotationOrder: 4
     maxLights: 20
   TrailModule:
-    enabled: 1
+    enabled: 0
     mode: 0
     ratio: 1
     lifetime:
@@ -26809,6 +26807,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7235041102996679292, guid: 2ec194039510dc74faab852b6a2146c0, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7235041102996679292, guid: 2ec194039510dc74faab852b6a2146c0, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ba4683ace8a8d634b86468205ce55d36, type: 2}
@@ -27371,8 +27373,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1703999202402274634, guid: d354da6c07e372f4e8bde97614461beb, type: 3}
+      propertyPath: maxSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703999202402274634, guid: d354da6c07e372f4e8bde97614461beb, type: 3}
+      propertyPath: brakeForce
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703999202402274634, guid: d354da6c07e372f4e8bde97614461beb, type: 3}
       propertyPath: turnFactor
       value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703999202402274634, guid: d354da6c07e372f4e8bde97614461beb, type: 3}
+      propertyPath: accelerationForce
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1703999202402274644, guid: d354da6c07e372f4e8bde97614461beb, type: 3}
       propertyPath: m_RootOrder
@@ -30243,6 +30257,7 @@ MonoBehaviour:
   rigidbody2D: {fileID: 1550923153}
   centerOfMass: {fileID: 379248895}
   carController: {fileID: 1550923154}
+  carAnimation: {fileID: 0}
   accelerationForce: 25
   maxSpeed: 25
   turnFactor: 60
@@ -34555,8 +34570,20 @@ PrefabInstance:
       value: Ambulance
       objectReference: {fileID: 0}
     - target: {fileID: 8719899261699514966, guid: d356808ee18b8b841914952711e9b4e2, type: 3}
+      propertyPath: maxSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8719899261699514966, guid: d356808ee18b8b841914952711e9b4e2, type: 3}
+      propertyPath: brakeForce
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8719899261699514966, guid: d356808ee18b8b841914952711e9b4e2, type: 3}
       propertyPath: turnFactor
       value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 8719899261699514966, guid: d356808ee18b8b841914952711e9b4e2, type: 3}
+      propertyPath: accelerationForce
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d356808ee18b8b841914952711e9b4e2, type: 3}
@@ -34740,8 +34767,20 @@ PrefabInstance:
       value: Fire Truck
       objectReference: {fileID: 0}
     - target: {fileID: 825182730860638078, guid: c87214fcd38e20247ab2dc48aa03e057, type: 3}
+      propertyPath: maxSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 825182730860638078, guid: c87214fcd38e20247ab2dc48aa03e057, type: 3}
+      propertyPath: brakeForce
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 825182730860638078, guid: c87214fcd38e20247ab2dc48aa03e057, type: 3}
       propertyPath: turnFactor
       value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 825182730860638078, guid: c87214fcd38e20247ab2dc48aa03e057, type: 3}
+      propertyPath: accelerationForce
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4017043035574225359, guid: c87214fcd38e20247ab2dc48aa03e057, type: 3}
       propertyPath: m_Controller
