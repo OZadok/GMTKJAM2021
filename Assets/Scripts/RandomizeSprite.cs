@@ -8,12 +8,18 @@ public class RandomizeSprite : MonoBehaviour
     [SerializeField] private bool randomizeRotation;
     [SerializeField] private bool randomizeFlip;
     private SpriteRenderer spriteRenderer;
+    private SpriteMask spriteMask;
     private int randIndex;
 
     void Start()
     {
+        spriteMask = GetComponent<SpriteMask>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         SetRandomSprite(sprites);
+        if (spriteMask != null)
+        {
+            spriteMask.sprite = spriteRenderer.sprite;
+        }
     }
 
     public void SetRandomSprite(List<Sprite> sprites)
@@ -44,7 +50,7 @@ public class RandomizeSprite : MonoBehaviour
             int randomFlip = Random.Range(0, 2);
             if (randomFlip == 1)
             {
-                spriteRenderer.flipX = true;
+                transform.rotation = Quaternion.Euler(0f,180f,transform.rotation.z);
             }
         }
     }
