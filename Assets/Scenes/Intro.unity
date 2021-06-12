@@ -232,8 +232,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -48.4, y: 22.9}
-  m_SizeDelta: {x: 91.9528, y: 39.372}
+  m_AnchoredPosition: {x: -45, y: 25}
+  m_SizeDelta: {x: 80, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &213909710
 MonoBehaviour:
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.98039216, g: 0.972549, b: 0.92156863, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -257,10 +257,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 1a36ba108ffc9ce4b9ef8673d1d21d4b, type: 3}
-    m_FontSize: 24
+    m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 1
     m_MaxSize: 48
     m_Alignment: 8
     m_AlignByGeometry: 0
@@ -392,7 +392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_UiScaleMode: 1
-  m_ReferencePixelsPerUnit: 100
+  m_ReferencePixelsPerUnit: 8
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 480, y: 270}
   m_ScreenMatchMode: 0
@@ -476,43 +476,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - dialogueLine: "The eyes of the global \rhigh-tech industry"
+  - dialogueLine: "The eyes of the global \rhigh-tech industry are set on the most
+      unexpected of places today.\n"
     slideIndex: 0
-  - dialogueLine: 'are set on the most unexpected of places today.
-
-'
-    slideIndex: 0
-  - dialogueLine: The crime-ridden town of Ashford, Wyoming,
+  - dialogueLine: The crime-ridden town of Ashford, Wyoming, home of less than 500
+      people,
     slideIndex: 1
-  - dialogueLine: home of less than 500 people,
-    slideIndex: 1
-  - dialogueLine: became the first place on Earth
-    slideIndex: 1
-  - dialogueLine: to replace their emergency service vehicles
+  - dialogueLine: became the first place on Earth to replace their emergency service
+      vehicles
     slideIndex: 1
   - dialogueLine: with completely autonomous counterparts.
     slideIndex: 1
-  - dialogueLine: The shocking announcement,
+  - dialogueLine: The shocking announcement, made during the dryest summer in history,
     slideIndex: 2
-  - dialogueLine: made during the dryest summer in history,
+  - dialogueLine: exploded on social media, with the apocalyptic #ASHESford going
+      viral.
     slideIndex: 2
-  - dialogueLine: exploded on social media,
-    slideIndex: 2
-  - dialogueLine: with the apocalyptic #ASHESford going viral.
-    slideIndex: 2
-  - dialogueLine: The mayor, Zachary Bribesman,
+  - dialogueLine: The mayor, Zachary Bribesman, stated the town has never been in
+      better hands,
     slideIndex: 3
-  - dialogueLine: stated the town has never been in better hands,
+  - dialogueLine: before stepping into a private jet holding two cash briefcases.
     slideIndex: 3
-  - dialogueLine: 'before stepping into a private jet '
-    slideIndex: 3
-  - dialogueLine: holding two cash briefcases.
-    slideIndex: 3
-  - dialogueLine: With their future unclear,
-    slideIndex: 4
-  - dialogueLine: the people of Ashford prepare for the worst,
-    slideIndex: 4
-  - dialogueLine: and hope for the best.
+  - dialogueLine: With their future unclear, the people of Ashford prepare for the
+      worst, and hope for the best.
     slideIndex: 4
   slides:
   - {fileID: 21300000, guid: b55db8e65df99264c9ca146039b2f4d8, type: 3}
@@ -788,8 +774,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 47.2}
-  m_SizeDelta: {x: 450, y: 73.7356}
+  m_AnchoredPosition: {x: 0, y: 50}
+  m_SizeDelta: {x: 450, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2095510783
 MonoBehaviour:
@@ -804,7 +790,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.98039216, g: 0.972549, b: 0.92156863, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -813,10 +799,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 1a36ba108ffc9ce4b9ef8673d1d21d4b, type: 3}
-    m_FontSize: 36
+    m_FontSize: 32
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 3
+    m_MinSize: 1
     m_MaxSize: 77
     m_Alignment: 0
     m_AlignByGeometry: 0
