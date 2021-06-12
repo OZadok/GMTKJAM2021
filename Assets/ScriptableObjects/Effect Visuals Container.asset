@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 536406706fb652743af06e832ad5c065, type: 3}
   m_Name: Effect Visuals Container
   m_EditorClassIdentifier: 
+  regularEffect: {fileID: 11400000, guid: 3a2a8583278fd394db270f782a4e385d, type: 2}
   fireEffect: {fileID: 11400000, guid: 4b535fee479fd2c4db3f6b4b5aee9e9c, type: 2}
   criminalEffect: {fileID: 11400000, guid: f237410d5a63785408fec881335f4c1d, type: 2}
