@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Damaged Effect Visuals
   m_EditorClassIdentifier: 
   Material: {fileID: 2100000, guid: 60c37a9ca08cb3943ab92852fa28be9d, type: 2}
-  gameObjectsToSpawn: []
+  gameObjectsToSpawn:
+  - {fileID: 8490590574527581939, guid: 919f32baad7937b44a5d43b63cf49e77, type: 3}
   textboxCondition: 6

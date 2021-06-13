@@ -18,10 +18,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: fa3c430683733f7479445ba85ae98a06, type: 3}
   - {fileID: 8300000, guid: fad713ca420a7b54385336ff5cbf4e66, type: 3}
   - {fileID: 8300000, guid: 1ced854773d98514a86549ae04b9ed04, type: 3}
-  volume: 0.25
+  volume: 0.3
   volumeVariance: 0
   pitch: 1
-  pitchVariance: 0.1
+  pitchVariance: 0
   loop: 0
   mixerGroup: {fileID: 1129067442545850747, guid: 72d522ab6787e9543a7f24e7e3cc97fb, type: 2}
   source: {fileID: 0}

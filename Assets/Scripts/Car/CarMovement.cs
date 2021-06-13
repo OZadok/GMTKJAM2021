@@ -303,7 +303,7 @@ public class CarMovement : MonoBehaviour
         var peepStateComponent = collision.collider.GetComponent<StateComponent>();
         peepStateComponent.CurrentState = State.Damaged;
         
-        AudioManager.instance.Play(rammingPeepSound, true);
+        AudioManager.instance.Play(rammingPeepSound, false);
         CameraManager.Shake(1, 5, 0.1f);
         
         // // get impact
