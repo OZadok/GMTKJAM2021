@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: kus rabak i am on fire
+  m_text: come and get me!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e8abe14f98c6b6e4587baf1b12b141be, type: 2}
   m_sharedMaterial: {fileID: 4035418378863244914, guid: e8abe14f98c6b6e4587baf1b12b141be, type: 2}
@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 7988925046471721082}
   - component: {fileID: 7988925046471721083}
   - component: {fileID: 5100280705880781677}
+  - component: {fileID: 7597869201428461516}
   m_Layer: 5
   m_Name: Text Box
   m_TagString: Untagged
@@ -173,7 +174,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -126.58, y: -35}
+  m_AnchoredPosition: {x: -126, y: -30.985}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7988925046471721081
@@ -264,7 +265,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 2
+  m_ChildAlignment: 5
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
@@ -286,3 +287,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyTime: 3
+--- !u!114 &7597869201428461516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7988925046471721028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78467775c556a234891d021e8aaf2950, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textfield: {fileID: 7988925046332723658}

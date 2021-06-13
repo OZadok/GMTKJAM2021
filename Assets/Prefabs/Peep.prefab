@@ -434,6 +434,8 @@ MonoBehaviour:
   crosswalk:
     serializedVersion: 2
     m_Bits: 2048
+  timeBetweenCrosses: 10
+  timeToBeStuckInWander: 5
 --- !u!50 &4728743971183599563
 Rigidbody2D:
   serializedVersion: 4
@@ -504,7 +506,9 @@ MonoBehaviour:
   fromState: 1
   toState: 3
   timeToMove: 5
+  textboxCondition: 0
   soundToPlayOnMove: {fileID: 11400000, guid: b5eab9f20c16fcb4e839e2bea54cf930, type: 2}
+  screenShakeAmplitude: 0
 --- !u!114 &2349245606501537600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -521,4 +525,6 @@ MonoBehaviour:
   fromState: 3
   toState: 4
   timeToMove: 10
+  textboxCondition: 0
   soundToPlayOnMove: {fileID: 11400000, guid: b5eab9f20c16fcb4e839e2bea54cf930, type: 2}
+  screenShakeAmplitude: 0

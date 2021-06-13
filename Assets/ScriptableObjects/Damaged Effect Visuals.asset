@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Material: {fileID: 2100000, guid: 60c37a9ca08cb3943ab92852fa28be9d, type: 2}
   gameObjectsToSpawn: []
+  textboxCondition: 6
