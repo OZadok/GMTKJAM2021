@@ -15,8 +15,21 @@ public class GameManager : MonoBehaviour
 	public int totalPeepsAmount;
 	public int damagedPeepsAmount;
 
+	[SerializeField] private RectTransform populationBar;
+	[SerializeField] private RectTransform orderBar;
+	[SerializeField] private RectTransform integrityBar;
+
+	float populationWidth, orderWidth, integrityWidth, populationHeight, orderHeight, integrityHeight;
+
 	private void Awake()
 	{
+		populationWidth = populationBar.rect.width;
+		orderWidth = populationBar.rect.width;
+		integrityWidth= populationBar.rect.width;
+		populationHeight = populationBar.rect.height;
+		orderHeight = populationBar.rect.height;
+		integrityHeight = populationBar.rect.height;
+
 		Instance = this;
 		totalBuildingAmount = 0;
 		damagedBuildingAmount = 0;
@@ -44,6 +57,10 @@ public class GameManager : MonoBehaviour
 
 		damagedBuildingAmount++;
 
+		integrityBar.sizeDelta = new Vector2(order * integrityWidth, integrityHeight);
+		populationBar.sizeDelta = new Vector2((peeps * populationWidth), populationHeight);
+		integrityBar.sizeDelta = new Vector2((integrity * integrityWidth), integrityHeight);
+
 		integrity = 1f - (float) damagedBuildingAmount / (float) totalBuildingAmount;
 		if (damagedBuildingAmount == totalBuildingAmount)
 		{
@@ -55,6 +72,10 @@ public class GameManager : MonoBehaviour
 	{
 		peep.StateComponent.OnStateChange.AddListener(OnPeepStateChanged);
 		totalPeepsAmount++;
+
+		integrityBar.sizeDelta = new Vector2(order * integrityWidth, integrityHeight);
+		populationBar.sizeDelta = new Vector2((peeps * populationWidth), populationHeight);
+		integrityBar.sizeDelta = new Vector2((integrity * integrityWidth), integrityHeight);
 	}
 
 	private void OnPeepStateChanged(State state)
@@ -67,6 +88,11 @@ public class GameManager : MonoBehaviour
 		damagedPeepsAmount++;
 
 		peeps = 1f - (float) damagedPeepsAmount / (float) totalPeepsAmount;
+
+		integrityBar.sizeDelta = new Vector2(order * integrityWidth, integrityHeight);
+		populationBar.sizeDelta = new Vector2((peeps * populationWidth), populationHeight);
+		integrityBar.sizeDelta = new Vector2((integrity * integrityWidth), integrityHeight);
+
 		if (damagedPeepsAmount == totalPeepsAmount)
 		{
 			Lose();
