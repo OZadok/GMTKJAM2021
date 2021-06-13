@@ -226,6 +226,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8719119763026823270}
   - component: {fileID: 779990571370841372}
+  - component: {fileID: 7339391428839081627}
   - component: {fileID: 4252116758751870167}
   m_Layer: 0
   m_Name: Spreader
@@ -277,8 +278,41 @@ MonoBehaviour:
     maxDepth: 1e+10
     minNormalAngle: -1e+10
     maxNormalAngle: 1e+10
+  minTimeToSpread: 30
+  maxTimeToSpread: 60
+  canStartEffect: 1
+--- !u!114 &7339391428839081627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671702259847432356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c0b7a47c80231f44b8a77bd1e78d0df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateComponent: {fileID: 6347826612652941482}
+  spreadCollider: {fileID: 4252116758751870167}
+  stateToSpread: 1
+  contactFilter2D:
+    useTriggers: 1
+    useLayerMask: 1
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 768
+    minDepth: -1e+10
+    maxDepth: 1e+10
+    minNormalAngle: -1e+10
+    maxNormalAngle: 1e+10
   minTimeToSpread: 10
   maxTimeToSpread: 15
+  canStartEffect: 0
 --- !u!61 &4252116758751870167
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -321,7 +355,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4728743969614910607
 Transform:
   m_ObjectHideFlags: 0
@@ -368,7 +402,6 @@ GameObject:
   - component: {fileID: 1002933682570383274}
   - component: {fileID: 140752749018078354}
   - component: {fileID: 2349245606501537600}
-  - component: {fileID: 1822248251714376103}
   m_Layer: 7
   m_Name: Peep
   m_TagString: Untagged
@@ -507,6 +540,7 @@ MonoBehaviour:
   fromState: 1
   toState: 3
   timeToMove: 5
+  textboxCondition: 0
   soundToPlayOnMove: {fileID: 11400000, guid: b5eab9f20c16fcb4e839e2bea54cf930, type: 2}
   screenShakeAmplitude: 0
 --- !u!114 &2349245606501537600
@@ -525,21 +559,6 @@ MonoBehaviour:
   fromState: 3
   toState: 4
   timeToMove: 10
+  textboxCondition: 0
   soundToPlayOnMove: {fileID: 11400000, guid: b5eab9f20c16fcb4e839e2bea54cf930, type: 2}
   screenShakeAmplitude: 0
---- !u!58 &1822248251714376103
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4728743971183599562}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: b916f9c986481ef4d830de7a22d83cd5, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.0625, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.125

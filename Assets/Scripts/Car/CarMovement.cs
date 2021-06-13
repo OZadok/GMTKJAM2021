@@ -26,6 +26,7 @@ public class CarMovement : MonoBehaviour
     [Header("Brake")] 
     [SerializeField] private float brakeMaxDrag = 3f;
     [SerializeField] private float brakeDragLerpT = 3f;
+    private bool firstBrake = true;
 
     [Header("Feel")]
     [SerializeField] private Sound screechSound;
@@ -47,6 +48,14 @@ public class CarMovement : MonoBehaviour
     private void Start()
     {
         isAligned = false;
+        RandomizeDirection();
+    }
+
+    private void RandomizeDirection()
+    {
+        var euler = transform.eulerAngles;
+        euler.z = UnityEngine.Random.Range(0.0f, 360.0f);
+        transform.eulerAngles = euler;
     }
 
     private void FixedUpdate()
@@ -78,7 +87,14 @@ public class CarMovement : MonoBehaviour
     {
         if (isBrake)
         {
-            StartTireEmitter();
+            if (firstBrake)
+            {
+                firstBrake = false;
+            }
+            else
+            {
+                StartTireEmitter();
+            }
         }
         else
         {
@@ -243,6 +259,10 @@ public class CarMovement : MonoBehaviour
             {
                 AudioManager.instance.Play(rammingSound, true);
                 //CameraManager.Shake(2,5,0.1f);
+                if (collision.gameObject.tag == "Building")
+                {
+                    collision.gameObject.GetComponent<HitEffects>().GetHit();
+                }
             }
 
             if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Peep"))

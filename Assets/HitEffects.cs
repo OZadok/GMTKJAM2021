@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class HitEffects : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] private ParticleSystem particleSystem;
 
-    // Update is called once per frame
+    private void Start()
+    {
+
+    }
+
     public void GetHit()
     {
         if (particleSystem != null)

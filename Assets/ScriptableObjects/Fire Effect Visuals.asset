@@ -15,5 +15,4 @@ MonoBehaviour:
   Material: {fileID: 2100000, guid: ba4683ace8a8d634b86468205ce55d36, type: 2}
   gameObjectsToSpawn:
   - {fileID: 8490590574527581939, guid: 0fd9257bf33acea4fb077a8e05b084b8, type: 3}
-  fireObject: {fileID: 8490590574527581939, guid: 0fd9257bf33acea4fb077a8e05b084b8, type: 3}
-  spawnFire: 1
+  textboxCondition: 1
