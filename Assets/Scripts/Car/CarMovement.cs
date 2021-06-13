@@ -249,7 +249,35 @@ public class CarMovement : MonoBehaviour
             {
                 AudioManager.instance.Play(rammingPeepSound, true);
                 CameraManager.Shake(1, 5, 0.1f);
+                CollisionWithPeep(collision);
             }
         }
+    }
+
+    private void CollisionWithPeep(Collision2D collision)
+    {
+        // Debug.Log("CollisionWithPeep");
+        //change state
+        var peepStateComponent = collision.collider.GetComponent<StateComponent>();
+        peepStateComponent.CurrentState = State.Damaged;
+        
+        // // get impact
+        // var impulse = ComputeTotalImpulse(collision);
+        // collision.collider.GetComponent<Rigidbody2D>().AddForce(-impulse * 10000, ForceMode2D.Impulse);
+    }
+    
+    static Vector2 ComputeTotalImpulse(Collision2D collision) {
+        Vector2 impulse = Vector2.zero;
+
+        int contactCount = collision.contactCount;
+        for(int i = 0; i < contactCount; i++) {
+            var contact = collision.GetContact(i);
+            impulse += contact.normal * contact.normalImpulse;
+            impulse += contact.tangentImpulse * (Vector2)(Quaternion.Euler(0, 0, 90) *contact.normal);
+            // impulse.x += contact.tangentImpulse * contact.normal.y;
+            // impulse.y -= contact.tangentImpulse * contact.normal.x;
+        }
+
+        return impulse;
     }
 }
