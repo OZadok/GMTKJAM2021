@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8321911995671461165}
   - component: {fileID: 7942225383208163233}
   - component: {fileID: 5062093672664968630}
+  - component: {fileID: 4614379139927849534}
   m_Layer: 9
   m_Name: Building
   m_TagString: Building
@@ -133,6 +134,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particleSystem: {fileID: 1201821839156787923}
+--- !u!114 &4614379139927849534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137379821282057131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 773eff4d8719e2b4ebdfc658fd788ed2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StateComponent: {fileID: 1968997527236220900}
 --- !u!1 &4162557886320404028
 GameObject:
   m_ObjectHideFlags: 0

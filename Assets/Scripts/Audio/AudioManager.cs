@@ -14,15 +14,17 @@ public class AudioManager : MonoBehaviour
 
 	void Awake()
 	{
-		if (instance != null)
+		if (instance == null)
 		{
-			Destroy(gameObject);
+			instance = this;
 		}
 		else
 		{
-			instance = this;
-			DontDestroyOnLoad(gameObject);
+			Destroy(this.gameObject);
+			return;
 		}
+
+		DontDestroyOnLoad(this.gameObject);
 
 		foreach (Sound s in Resources.LoadAll("Audio", typeof(Sound)))
         {
@@ -93,7 +95,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-	/*
+    /*
 	[MenuItem("Tools/New Sound...")]
 	static void DoSomething(MenuCommand command)
 	{

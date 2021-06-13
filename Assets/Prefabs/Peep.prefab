@@ -403,6 +403,7 @@ GameObject:
   - component: {fileID: 140752749018078354}
   - component: {fileID: 2349245606501537600}
   - component: {fileID: 4317064370478621490}
+  - component: {fileID: 8784580177022299066}
   m_Layer: 7
   m_Name: Peep
   m_TagString: Untagged
@@ -577,3 +578,16 @@ CircleCollider2D:
   m_Offset: {x: 0.0625, y: 0}
   serializedVersion: 2
   m_Radius: 0.125
+--- !u!114 &8784580177022299066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4728743971183599562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ada821fbfd7a5984db6a4358044eb7ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StateComponent: {fileID: 6347826612652941482}

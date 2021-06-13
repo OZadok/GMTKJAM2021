@@ -54,13 +54,16 @@ public class PeepAiController : MonoBehaviour
         switch (state)
         {
             case State.Damaged:
-                movement.Speed = movement.InitialState / 2f;
+                movement.Speed = movement.InitialState / 8f;
                 break;
             case State.Destroyed:
                 movement.Speed = 0;
                 toMoveForward = false;
                 horizontal = 0;
                 isDestroyed = true;
+                break;
+            case State.OnFire:
+                movement.Speed = movement.InitialState * 2f;
                 break;
             default:
                 movement.Speed = movement.InitialState;
