@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 	public float integrity; //standing building / buildings amount
 	public float peeps; // peeps alive / total peeps amount
 
+	public float ratioIntegrity = 0.5f;
+	public float ratioPeeps = 0.5f;
 	public int totalOrderAmount => AliveBuildingAmount * orderBuildingWeight + AlivePeepsAmount + orderPeepWeight;
 	public int notOrderAmount;
 
@@ -18,6 +20,7 @@ public class GameManager : MonoBehaviour
 
 	public int totalBuildingAmount;
 	public int damagedBuildingAmount;
+	
 	public int AliveBuildingAmount => totalBuildingAmount - damagedBuildingAmount;
 
 	public int totalPeepsAmount;
@@ -160,8 +163,8 @@ public class GameManager : MonoBehaviour
 		populationBar.sizeDelta = new Vector2((peeps * populationWidth), populationHeight);
 		integrityBar.sizeDelta = new Vector2((integrity * integrityWidth), integrityHeight);
 
-		integrity = 1f - (float) damagedBuildingAmount / (float) totalBuildingAmount;
-		if (damagedBuildingAmount == totalBuildingAmount)
+		integrity = 1f - (float) damagedBuildingAmount / (ratioIntegrity * (float) totalBuildingAmount);
+		if (damagedBuildingAmount >= (ratioIntegrity * (float) totalBuildingAmount))
 		{
 			Lose();
 		}
@@ -180,13 +183,13 @@ public class GameManager : MonoBehaviour
 
 		damagedPeepsAmount++;
 
-		peeps = 1f - (float) damagedPeepsAmount / (float) totalPeepsAmount;
+		peeps = 1f - (float) damagedPeepsAmount / (ratioPeeps * (float) totalPeepsAmount);
 
 		integrityBar.sizeDelta = new Vector2(order * integrityWidth, integrityHeight);
 		populationBar.sizeDelta = new Vector2((peeps * populationWidth), populationHeight);
 		integrityBar.sizeDelta = new Vector2((integrity * integrityWidth), integrityHeight);
 
-		if (damagedPeepsAmount == totalPeepsAmount)
+		if (damagedPeepsAmount >= (ratioPeeps * (float) totalPeepsAmount))
 		{
 			Lose();
 		}
