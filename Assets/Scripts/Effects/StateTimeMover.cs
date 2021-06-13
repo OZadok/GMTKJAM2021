@@ -12,7 +12,10 @@ public class StateTimeMover : MonoBehaviour
     [SerializeField] private State fromState;
     [SerializeField] private State toState;
     [SerializeField] private float timeToMove;
+
+    [Header("Gamefeel")]
     [SerializeField] private Sound soundToPlayOnMove;
+    [SerializeField] private float screenShakeAmplitude = 0f;
 
     private void Start()
     {
@@ -45,6 +48,8 @@ public class StateTimeMover : MonoBehaviour
             AudioManager.instance.Play(soundToPlayOnMove, false);
             print("Played " + soundToPlayOnMove.name);
         }
+
+        CameraManager.Shake(screenShakeAmplitude, 5, 0.15f);
 
         stateComponent.CurrentState = toState;
     }

@@ -7,6 +7,7 @@ public class EffectVisuals : ScriptableObject
 {
 	public Material Material;
 	public List<GameObject> gameObjectsToSpawn;
+	public Conditions textboxCondition;
 
 	public void Set(GameObject gameObject)
 	{
@@ -25,5 +26,7 @@ public class EffectVisuals : ScriptableObject
 			var spriteRenderer = gameObject.transform.GetComponentInChildren<SpriteRenderer>();
 			Instantiate(gameObjectToSpawn, spriteRenderer.transform);
 		}
+
+		FlairTextController.instance.CreateTextbox(textboxCondition);
 	}
 }
