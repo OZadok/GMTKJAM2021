@@ -15,3 +15,5 @@ MonoBehaviour:
   regularEffect: {fileID: 11400000, guid: 3a2a8583278fd394db270f782a4e385d, type: 2}
   fireEffect: {fileID: 11400000, guid: 4b535fee479fd2c4db3f6b4b5aee9e9c, type: 2}
   criminalEffect: {fileID: 11400000, guid: f237410d5a63785408fec881335f4c1d, type: 2}
+  damagedEffect: {fileID: 11400000, guid: 6b3e2b48575ab0242a57f0aa07b6584c, type: 2}
+  destroyedEffect: {fileID: 11400000, guid: 89e5371b628ba764b9bc48e25f489a41, type: 2}
