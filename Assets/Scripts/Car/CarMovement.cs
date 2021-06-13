@@ -242,12 +242,13 @@ public class CarMovement : MonoBehaviour
             if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Building"))
             {
                 AudioManager.instance.Play(rammingSound, true);
-                CameraManager.Shake(2,5,0.2f);
+                CameraManager.Shake(2,5,0.1f);
             }
 
             if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Peep"))
             {
                 AudioManager.instance.Play(rammingPeepSound, true);
+                CameraManager.Shake(1, 5, 0.1f);
             }
         }
     }
