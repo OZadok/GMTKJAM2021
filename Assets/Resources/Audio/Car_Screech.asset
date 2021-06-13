@@ -10,14 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb69aa2d8f498d1469805473a77181f0, type: 3}
-  m_Name: Car_MotorIdle
+  m_Name: Car_Screech
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: ff4181d564b036f4583b8b6055109015, type: 3}
-  randomizedClip: []
-  volume: 0.2
+  clip: {fileID: 8300000, guid: b437bea260780b2499eb37198fdda516, type: 3}
+  randomizedClip:
+  - {fileID: 8300000, guid: b437bea260780b2499eb37198fdda516, type: 3}
+  - {fileID: 8300000, guid: 7721aa9703e0e0b4cb5480258fde0784, type: 3}
+  volume: 0.5
   volumeVariance: 0
   pitch: 1
   pitchVariance: 0
-  loop: 1
+  loop: 0
   mixerGroup: {fileID: 1129067442545850747, guid: 72d522ab6787e9543a7f24e7e3cc97fb, type: 2}
   source: {fileID: 0}

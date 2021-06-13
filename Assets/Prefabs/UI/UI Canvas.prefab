@@ -126,6 +126,7 @@ MonoBehaviour:
     textAsset: {fileID: 4900000, guid: 2708a4236056d0c42902a1573a176602, type: 3}
   - condition: 5
     textAsset: {fileID: 4900000, guid: 8f2cf3b7fd933ef46aa1ce2152444c9c, type: 3}
+  textBoxPrefab: {fileID: 7988925046471721028, guid: 5f77769fe17d4ad49af97d2061baf01f, type: 3}
 --- !u!1001 &8013558735284216103
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -227,7 +228,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7988925046471721031, guid: 5f77769fe17d4ad49af97d2061baf01f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -126.58
+      value: -126.58002
       objectReference: {fileID: 0}
     - target: {fileID: 7988925046471721031, guid: 5f77769fe17d4ad49af97d2061baf01f, type: 3}
       propertyPath: m_AnchoredPosition.y

@@ -34386,36 +34386,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foliage: {fileID: 3963812303891317806, guid: 0a629aad7bf3fca47bad94b678da0fcf, type: 3}
   numberOfObjects: 100
---- !u!1 &1864979377 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8013558735917128023, guid: 884336984c12c3947b735c7777b78478, type: 3}
-  m_PrefabInstance: {fileID: 8013558734527187686}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1864979378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1864979377}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcaa81d720f98944086a06e1e8b87170, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textList:
-  - condition: 2
-    textAsset: {fileID: 4900000, guid: f7ee16df0895c8846b905f035f9a9b51, type: 3}
-  - condition: 0
-    textAsset: {fileID: 4900000, guid: 4df4a2eb9e0541e42adaa0f05cad7f1e, type: 3}
-  - condition: 3
-    textAsset: {fileID: 4900000, guid: ccaf71e73386c794ab877e1e69d0ecab, type: 3}
-  - condition: 2
-    textAsset: {fileID: 4900000, guid: c4c0c5664692d41478da874d0abaa6bc, type: 3}
-  - condition: 1
-    textAsset: {fileID: 4900000, guid: 2708a4236056d0c42902a1573a176602, type: 3}
-  - condition: 5
-    textAsset: {fileID: 4900000, guid: 8f2cf3b7fd933ef46aa1ce2152444c9c, type: 3}
 --- !u!1001 &1866495699
 PrefabInstance:
   m_ObjectHideFlags: 0

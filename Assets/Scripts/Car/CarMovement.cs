@@ -12,6 +12,7 @@ public class CarMovement : MonoBehaviour
     [SerializeField] private CarController carController;
     [SerializeField] private CarAnimation carAnimation;
     [SerializeField] private TrailRenderer[] tireMarks;
+    [SerializeField] private Sound screechSound, speedingSound;
     [SerializeField] private Transform directionArrow;
     [Header("Parameters")]
     [SerializeField] private float accelerationForce;
@@ -58,6 +59,9 @@ public class CarMovement : MonoBehaviour
             CheckDrift(true);
         }
 
+        if(carController.vertical == 0 && carController.horizontal == 0)
+            AudioManager.instance.Stop(speedingSound);
+
         KillOrthogonalVelocity();
         ApplySteering(carController.horizontal);
 
@@ -76,16 +80,20 @@ public class CarMovement : MonoBehaviour
         else
         {
             StopTireEmitter();
+            //AudioManager.instance.Stop(screechSound);
         }
     }
 
     private void StartTireEmitter()
     {
         if (tierMarksOn) return;
+
         foreach (TrailRenderer trailRenderer in tireMarks)
         {
             trailRenderer.emitting = true;
         }
+        AudioManager.instance.Play(screechSound, true);
+        //print("Screechin'");
 
         tierMarksOn = true;
     }
@@ -126,6 +134,8 @@ public class CarMovement : MonoBehaviour
         var engineForceVector = transform.up * (verticalInput * accelerationForce);
         
         rigidbody2D.AddForce(engineForceVector, ForceMode2D.Force);
+
+        AudioManager.instance.Play(speedingSound, true);
 
         // rigidbody2D.
         //
