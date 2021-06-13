@@ -17,7 +17,7 @@ MonoBehaviour:
   volume: 0.2
   volumeVariance: 0
   pitch: 1
-  pitchVariance: 0.25
+  pitchVariance: 0.3
   loop: 0
   mixerGroup: {fileID: 1129067442545850747, guid: 72d522ab6787e9543a7f24e7e3cc97fb, type: 2}
   source: {fileID: 0}

@@ -269,7 +269,7 @@ public class CarMovement : MonoBehaviour
 
             if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Peep"))
             {
-                AudioManager.instance.Play(rammingPeepSound, true);
+                AudioManager.instance.Play(rammingPeepSound, false);
                 CameraManager.Shake(1, 5, 0.1f);
                 CollisionWithPeep(collision);
             }
