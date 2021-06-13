@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2972953491118028528}
   - component: {fileID: 8097080287852246409}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,8 +149,10 @@ MonoBehaviour:
   - {fileID: 6672628313949371157, guid: 094ee5d1f2d627043985260762d96b42, type: 3}
   - {fileID: 7239908545631856689, guid: 094ee5d1f2d627043985260762d96b42, type: 3}
   - {fileID: -3629174307565747625, guid: 094ee5d1f2d627043985260762d96b42, type: 3}
+  destroyed_sprites: []
   randomizeRotation: 0
   randomizeFlip: 1
+  stateComponent: {fileID: 0}
 --- !u!1 &7963693033592542055
 GameObject:
   m_ObjectHideFlags: 0

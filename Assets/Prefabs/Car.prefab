@@ -484,8 +484,6 @@ MonoBehaviour:
   - {fileID: 1604990398828935849}
   - {fileID: 4799035629517204542}
   - {fileID: 6621774715327754013}
-  screechSound: {fileID: 11400000, guid: d346281f5dbd875499aee9e8a2f76d35, type: 2}
-  speedingSound: {fileID: 11400000, guid: 913f20e19b7d19948805cc9bb9fbd33b, type: 2}
   directionArrow: {fileID: 0}
   accelerationForce: 10000
   maxSpeed: 5
@@ -494,6 +492,10 @@ MonoBehaviour:
   driftFactor: 0.6
   brakeMaxDrag: 3
   brakeDragLerpT: 3
+  screechSound: {fileID: 11400000, guid: d346281f5dbd875499aee9e8a2f76d35, type: 2}
+  speedingSound: {fileID: 11400000, guid: 913f20e19b7d19948805cc9bb9fbd33b, type: 2}
+  rammingSound: {fileID: 11400000, guid: 669e4a5871722374daed4841f843dbff, type: 2}
+  rammingPeepSound: {fileID: 11400000, guid: ad55ae87397e83a458cc2c0b0666295d, type: 2}
 --- !u!114 &7470337706660172676
 MonoBehaviour:
   m_ObjectHideFlags: 0

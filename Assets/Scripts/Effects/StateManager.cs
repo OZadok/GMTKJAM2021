@@ -59,7 +59,7 @@ public class StateManager : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(systemTimer + UnityEngine.Random.Range(0, randomOffset));
-            print("TRIGGERED");
+            //print("TRIGGERED");
             stateSpreaders.Shuffle();
             foreach (var stateSpreader in stateSpreaders)
             {

@@ -12,7 +12,6 @@ public class CarMovement : MonoBehaviour
     [SerializeField] private CarController carController;
     [SerializeField] private CarAnimation carAnimation;
     [SerializeField] private TrailRenderer[] tireMarks;
-    [SerializeField] private Sound screechSound, speedingSound;
     [SerializeField] private Transform directionArrow;
     [Header("Parameters")]
     [SerializeField] private float accelerationForce;
@@ -27,6 +26,10 @@ public class CarMovement : MonoBehaviour
     [Header("Brake")] 
     [SerializeField] private float brakeMaxDrag = 3f;
     [SerializeField] private float brakeDragLerpT = 3f;
+
+    [Header("Feel")]
+    [SerializeField] private Sound screechSound;
+    [SerializeField] private Sound speedingSound, rammingSound, rammingPeepSound;
 
     private bool isAligned;
     private bool tierMarksOn;
@@ -230,5 +233,21 @@ public class CarMovement : MonoBehaviour
         
         rigidbody2D.MoveRotation(newAngle);
         isAligned = true;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (rigidbody2D.velocity.magnitude > 0.1)
+        {
+            if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Building"))
+            {
+                AudioManager.instance.Play(rammingSound, true);
+            }
+
+            if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Peep"))
+            {
+                AudioManager.instance.Play(rammingPeepSound, true);
+            }
+        }
     }
 }
