@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1020259626647117789, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
+      propertyPath: m_Size.x
+      value: 0.875
+      objectReference: {fileID: 0}
+    - target: {fileID: 1020259626647117789, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
+      propertyPath: m_Size.y
+      value: 1.375
+      objectReference: {fileID: 0}
     - target: {fileID: 1623078113547559136, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -21,7 +29,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6195702427369041773, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
       propertyPath: m_Name
-      value: Ambulance
+      value: Ambulance - Player Controllled Car Variant Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6195702427369041774, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
       propertyPath: m_Mass
@@ -114,7 +122,7 @@ PrefabInstance:
     - target: {fileID: 8984047880559301948, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -4514035363907677848, guid: a6aa86506f4402e46b75e21286288d57, type: 3}
+      objectReference: {fileID: 7444726021054079083, guid: a6aa86506f4402e46b75e21286288d57, type: 3}
     - target: {fileID: 8984047880559301948, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
       propertyPath: m_SortingOrder
       value: 2
