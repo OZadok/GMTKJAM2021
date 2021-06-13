@@ -28208,6 +28208,8 @@ MonoBehaviour:
   carController: {fileID: 1550923154}
   carAnimation: {fileID: 0}
   tireMarks: []
+  screechSound: {fileID: 0}
+  speedingSound: {fileID: 0}
   directionArrow: {fileID: 0}
   accelerationForce: 25
   maxSpeed: 25
