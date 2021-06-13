@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Material: {fileID: 2100000, guid: d4ad336173ca2b74cba8e5cec53041e8, type: 2}
   gameObjectsToSpawn: []
+  destroyObjects: 1

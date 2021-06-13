@@ -9,11 +9,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 544022457271427637, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1350895676612570180, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895017691101077733, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3006573995349640486, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
       propertyPath: m_RootOrder
@@ -29,7 +33,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6195702427369041773, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
       propertyPath: m_Name
-      value: Police - Player Controllled Car Variant Variant
+      value: Police
       objectReference: {fileID: 0}
     - target: {fileID: 6195702427369041774, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
       propertyPath: m_Mass
@@ -41,11 +45,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6195702427369041775, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.3564453
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6195702427369041775, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.65989
+      value: -7.5
       objectReference: {fileID: 0}
     - target: {fileID: 6195702427369041775, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -80,8 +84,32 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6195702427369041777, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
+      propertyPath: maxSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195702427369041777, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
       propertyPath: brakeForce
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195702427369041777, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
+      propertyPath: turnFactor
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195702427369041777, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
+      propertyPath: driftFactor
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195702427369041777, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
+      propertyPath: brakeMaxDrag
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195702427369041777, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
+      propertyPath: brakeDragLerpT
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195702427369041777, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
+      propertyPath: reverseMaxSpeed
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6268644541114308390, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
       propertyPath: m_Size.x
@@ -115,5 +143,9 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -78474599978836210, guid: a6aa86506f4402e46b75e21286288d57, type: 3}
+    - target: {fileID: 8984047880559301948, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}

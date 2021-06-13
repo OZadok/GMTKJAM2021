@@ -13969,8 +13969,12 @@ PrefabInstance:
       value: StateManager
       objectReference: {fileID: 0}
     - target: {fileID: 8358605331016030805, guid: 1839e6f11d60f8041aea5b38fad9dc22, type: 3}
+      propertyPath: randomOffset
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8358605331016030805, guid: 1839e6f11d60f8041aea5b38fad9dc22, type: 3}
       propertyPath: startFireTime
-      value: 20
+      value: 17.5
       objectReference: {fileID: 0}
     - target: {fileID: 8358605331016030805, guid: 1839e6f11d60f8041aea5b38fad9dc22, type: 3}
       propertyPath: startCriminalTime
@@ -24830,30 +24834,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1703999202402274634, guid: d354da6c07e372f4e8bde97614461beb, type: 3}
-      propertyPath: maxSpeed
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1703999202402274634, guid: d354da6c07e372f4e8bde97614461beb, type: 3}
-      propertyPath: turnFactor
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 1703999202402274634, guid: d354da6c07e372f4e8bde97614461beb, type: 3}
-      propertyPath: driftFactor
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1703999202402274634, guid: d354da6c07e372f4e8bde97614461beb, type: 3}
-      propertyPath: brakeMaxDrag
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1703999202402274634, guid: d354da6c07e372f4e8bde97614461beb, type: 3}
-      propertyPath: brakeDragLerpT
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1703999202402274634, guid: d354da6c07e372f4e8bde97614461beb, type: 3}
-      propertyPath: reverseMaxSpeed
-      value: 12
-      objectReference: {fileID: 0}
     - target: {fileID: 1703999202402274644, guid: d354da6c07e372f4e8bde97614461beb, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -24901,10 +24881,6 @@ PrefabInstance:
     - target: {fileID: 1703999202402274646, guid: d354da6c07e372f4e8bde97614461beb, type: 3}
       propertyPath: m_Name
       value: Police
-      objectReference: {fileID: 0}
-    - target: {fileID: 4536219138341828359, guid: d354da6c07e372f4e8bde97614461beb, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d354da6c07e372f4e8bde97614461beb, type: 3}
@@ -34846,26 +34822,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1365055720347050968, guid: d356808ee18b8b841914952711e9b4e2, type: 3}
-      propertyPath: m_Radius
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2059564908001170025, guid: d356808ee18b8b841914952711e9b4e2, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2059564908001170025, guid: d356808ee18b8b841914952711e9b4e2, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5030391197759014119, guid: d356808ee18b8b841914952711e9b4e2, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 22100000, guid: f0e415ac53091464eacaff5ca230987b, type: 2}
-    - target: {fileID: 5788672908134422555, guid: d356808ee18b8b841914952711e9b4e2, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 8719899261699514952, guid: d356808ee18b8b841914952711e9b4e2, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -34910,33 +34866,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8719899261699514953, guid: d356808ee18b8b841914952711e9b4e2, type: 3}
-      propertyPath: m_Mass
-      value: 1250
-      objectReference: {fileID: 0}
     - target: {fileID: 8719899261699514954, guid: d356808ee18b8b841914952711e9b4e2, type: 3}
       propertyPath: m_Name
       value: Ambulance
-      objectReference: {fileID: 0}
-    - target: {fileID: 8719899261699514966, guid: d356808ee18b8b841914952711e9b4e2, type: 3}
-      propertyPath: maxSpeed
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 8719899261699514966, guid: d356808ee18b8b841914952711e9b4e2, type: 3}
-      propertyPath: brakeForce
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 8719899261699514966, guid: d356808ee18b8b841914952711e9b4e2, type: 3}
-      propertyPath: turnFactor
-      value: 125
-      objectReference: {fileID: 0}
-    - target: {fileID: 8719899261699514966, guid: d356808ee18b8b841914952711e9b4e2, type: 3}
-      propertyPath: driftFactor
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8719899261699514966, guid: d356808ee18b8b841914952711e9b4e2, type: 3}
-      propertyPath: reverseMaxSpeed
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d356808ee18b8b841914952711e9b4e2, type: 3}
@@ -35115,49 +35047,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 825182730860638049, guid: c87214fcd38e20247ab2dc48aa03e057, type: 3}
-      propertyPath: m_Mass
-      value: 1500
-      objectReference: {fileID: 0}
     - target: {fileID: 825182730860638050, guid: c87214fcd38e20247ab2dc48aa03e057, type: 3}
       propertyPath: m_Name
       value: Fire Truck
-      objectReference: {fileID: 0}
-    - target: {fileID: 825182730860638078, guid: c87214fcd38e20247ab2dc48aa03e057, type: 3}
-      propertyPath: maxSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 825182730860638078, guid: c87214fcd38e20247ab2dc48aa03e057, type: 3}
-      propertyPath: turnFactor
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 825182730860638078, guid: c87214fcd38e20247ab2dc48aa03e057, type: 3}
-      propertyPath: driftFactor
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 825182730860638078, guid: c87214fcd38e20247ab2dc48aa03e057, type: 3}
-      propertyPath: reverseMaxSpeed
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2460533476004320563, guid: c87214fcd38e20247ab2dc48aa03e057, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6953922373239238384, guid: c87214fcd38e20247ab2dc48aa03e057, type: 3}
-      propertyPath: m_Radius
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7991046142243856193, guid: c87214fcd38e20247ab2dc48aa03e057, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7991046142243856193, guid: c87214fcd38e20247ab2dc48aa03e057, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7991046142243856193, guid: c87214fcd38e20247ab2dc48aa03e057, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c87214fcd38e20247ab2dc48aa03e057, type: 3}

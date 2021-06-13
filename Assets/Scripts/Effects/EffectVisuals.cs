@@ -8,15 +8,18 @@ public class EffectVisuals : ScriptableObject
 	public Material Material;
 	public List<GameObject> gameObjectsToSpawn;
 
-	public bool spawnFire;
-
 	public void Set(GameObject gameObject)
 	{
 		var spriteRenderers = gameObject.GetComponentsInChildren<SpriteRenderer>();
+		var particleSystems = gameObject.GetComponentsInChildren<ParticleSystem>();
 		foreach (var spriteRenderer in spriteRenderers)
 		{
 			spriteRenderer.sharedMaterial = Material;
 		}
+		foreach (var particleSystem in particleSystems)
+        {
+			Destroy(particleSystem.gameObject);
+        }
 		foreach (var gameObjectToSpawn in gameObjectsToSpawn)
 		{
 			var spriteRenderer = gameObject.transform.GetComponentInChildren<SpriteRenderer>();

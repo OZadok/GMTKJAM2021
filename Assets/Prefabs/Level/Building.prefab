@@ -115,7 +115,7 @@ MonoBehaviour:
   stateComponent: {fileID: 1968997527236220900}
   fromState: 1
   toState: 4
-  timeToMove: 25
+  timeToMove: 15
   soundToPlayOnMove: {fileID: 11400000, guid: d6849fe6bf371fc4f8277802e0520ec7, type: 2}
 --- !u!1 &4162557886320404028
 GameObject:
@@ -178,8 +178,8 @@ MonoBehaviour:
     maxDepth: 1e+10
     minNormalAngle: -1e+10
     maxNormalAngle: 1e+10
-  minTimeToSpread: 10
-  maxTimeToSpread: 15
+  minTimeToSpread: 5
+  maxTimeToSpread: 10
 --- !u!61 &725713921072077854
 BoxCollider2D:
   m_ObjectHideFlags: 0

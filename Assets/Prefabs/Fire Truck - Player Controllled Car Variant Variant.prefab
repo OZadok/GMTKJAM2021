@@ -33,11 +33,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6195702427369041773, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
       propertyPath: m_Name
-      value: Fire Truck - Player Controllled Car Variant Variant
+      value: Fire Truck
       objectReference: {fileID: 0}
     - target: {fileID: 6195702427369041774, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
       propertyPath: m_Mass
-      value: 3000
+      value: 1500
       objectReference: {fileID: 0}
     - target: {fileID: 6195702427369041775, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
       propertyPath: m_RootOrder
@@ -45,11 +45,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6195702427369041775, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.384595
+      value: -26
       objectReference: {fileID: 0}
     - target: {fileID: 6195702427369041775, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.139664
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6195702427369041775, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -85,7 +85,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6195702427369041777, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
       propertyPath: maxSpeed
-      value: 4
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6195702427369041777, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
       propertyPath: brakeForce
@@ -93,11 +93,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6195702427369041777, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
       propertyPath: turnFactor
-      value: 120
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195702427369041777, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
+      propertyPath: driftFactor
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 6195702427369041777, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
       propertyPath: reverseMaxSpeed
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6268644541114308390, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
       propertyPath: m_Size.x
@@ -127,5 +131,9 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -4200712145587906281, guid: a6aa86506f4402e46b75e21286288d57, type: 3}
+    - target: {fileID: 8984047880559301948, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
