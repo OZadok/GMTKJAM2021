@@ -26,12 +26,28 @@ public class TextConditionals
 public class FlairTextController : MonoBehaviour
 {
     [SerializeField] private List<TextConditionals> textList = new List<TextConditionals>();
+    [SerializeField] private GameObject textBoxPrefab;
 
+    public static FlairTextController instance;
+
+    void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+            //DontDestroyOnLoad(gameObject);
+        }
+    }
+    
     private void Start()
     {
         //var path = Application.dataPath + "/Writing/" + textList[0].fileName + ".txt";
         var path = AssetDatabase.GetAssetPath(textList[0].textAsset);
         string[] lines = File.ReadAllLines(path);
-        print(lines[Random.Range(0, lines.Length)]);
+        //print(lines[Random.Range(0, lines.Length)]);
     }
 }
