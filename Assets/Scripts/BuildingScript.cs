@@ -7,6 +7,7 @@ public class BuildingScript : MonoBehaviour
 {
 	[SerializeField] public StateComponent StateComponent;
 	[SerializeField] public Collider2D Collider;
+	[SerializeField] public Sound destroyedSound;
 	private void Start()
 	{
 		GameManager.Instance.Register(this);
@@ -21,5 +22,8 @@ public class BuildingScript : MonoBehaviour
 		}
 
 		Collider.enabled = false;
+
+		if(destroyedSound != null)
+		AudioManager.instance.Play(destroyedSound, false);
 	}
 }
