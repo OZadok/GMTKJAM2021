@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5383ecf6b61708b43bd9c6ee88951989, type: 3}
   m_Name: Destroyed Effect Visuals
   m_EditorClassIdentifier: 
-  Material: {fileID: 2100000, guid: d4ad336173ca2b74cba8e5cec53041e8, type: 2}
+  Material: {fileID: 2100000, guid: 68052ee0df269804097ceb424ae3a87a, type: 2}
   gameObjectsToSpawn: []
-  destroyObjects: 1
+  textboxCondition: 0

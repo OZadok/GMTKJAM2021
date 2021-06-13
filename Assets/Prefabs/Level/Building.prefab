@@ -19,7 +19,7 @@ GameObject:
   m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &5732250655516763232
 Transform:
@@ -119,6 +119,7 @@ MonoBehaviour:
   toState: 4
   timeToMove: 10
   soundToPlayOnMove: {fileID: 11400000, guid: d6849fe6bf371fc4f8277802e0520ec7, type: 2}
+  screenShakeAmplitude: 0
 --- !u!114 &5062093672664968630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,7 +149,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &3938340963861715687
 Transform:
@@ -238,7 +239,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &3590035915884200472
 Transform:
@@ -5101,7 +5102,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!224 &2849388901787714173
 RectTransform:

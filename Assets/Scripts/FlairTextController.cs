@@ -52,7 +52,7 @@ public class FlairTextController : MonoBehaviour
     {
     }
 
-    public void CreateTextbox(Conditions condition)
+    public void CreateTextbox(Conditions condition, Vector3 position)
     {
         if(currentTextbox != null)
         {
@@ -69,7 +69,7 @@ public class FlairTextController : MonoBehaviour
         if (condition == Conditions.NONE) return;
 
         // Get variables
-        currentTextbox = Instantiate(textBoxPrefab, transform).GetComponent<Textbox>();
+        currentTextbox = Instantiate(textBoxPrefab, position, Quaternion.identity, transform).GetComponent<Textbox>();
         TextAsset conditionAsset = textList.Find(item => item.condition == condition).textAsset;
 
         // Get text and spawn it

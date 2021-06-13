@@ -26,7 +26,7 @@ public class EffectVisuals : ScriptableObject
 			var spriteRenderer = gameObject.transform.GetComponentInChildren<SpriteRenderer>();
 			Instantiate(gameObjectToSpawn, spriteRenderer.transform);
 		}
-
-		FlairTextController.instance.CreateTextbox(textboxCondition);
+		Vector3 position = gameObject.transform.position + new Vector3(0f, 2f, 0f);
+		FlairTextController.instance.CreateTextbox(textboxCondition, position);
 	}
 }
