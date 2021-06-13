@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -43,6 +44,8 @@ public class GameManager : MonoBehaviour
 	private bool lostGame = false;
 
 	float populationWidth, orderWidth, integrityWidth, populationHeight, orderHeight, integrityHeight;
+
+	public UnityEvent OnGameLose;
 
 	private void Awake()
 	{
@@ -222,6 +225,7 @@ public class GameManager : MonoBehaviour
 
 	private void Lose(int loseCondition)
 	{
+		OnGameLose.Invoke();
 		gameOver.SetActive(true);
 		// 0 Peeps Lose
 		// 1 Integrity Lose
