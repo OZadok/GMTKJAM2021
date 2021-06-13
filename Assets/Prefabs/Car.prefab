@@ -431,6 +431,7 @@ GameObject:
   - component: {fileID: 2449044148152757734}
   - component: {fileID: 2103186130760567624}
   - component: {fileID: 8804535745793940821}
+  - component: {fileID: 8513729622001791521}
   m_Layer: 8
   m_Name: Car
   m_TagString: Untagged
@@ -483,6 +484,8 @@ MonoBehaviour:
   - {fileID: 1604990398828935849}
   - {fileID: 4799035629517204542}
   - {fileID: 6621774715327754013}
+  screechSound: {fileID: 11400000, guid: d346281f5dbd875499aee9e8a2f76d35, type: 2}
+  speedingSound: {fileID: 11400000, guid: 913f20e19b7d19948805cc9bb9fbd33b, type: 2}
   directionArrow: {fileID: 0}
   accelerationForce: 10000
   maxSpeed: 5
@@ -572,6 +575,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.125, y: 1.625}
   m_EdgeRadius: 0
+--- !u!114 &8513729622001791521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2449044148152757733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6112a7661009f4d4e95e6f2b50bf995a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioFile: {fileID: 11400000, guid: 6cd79d06493ae9e4dbb17aa985f64d62, type: 2}
+  playOnce: 0
 --- !u!1 &3322857121470923874
 GameObject:
   m_ObjectHideFlags: 0

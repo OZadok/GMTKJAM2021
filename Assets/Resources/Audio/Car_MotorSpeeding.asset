@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Car_MotorSpeeding
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: d025d5d2561304b4a91fbd4688823f32, type: 3}
-  volume: 0.7
+  randomizedClip: []
+  volume: 0.15
   volumeVariance: 0
   pitch: 1
-  pitchVariance: 0
-  loop: 0
+  pitchVariance: 0.1
+  loop: 1
   mixerGroup: {fileID: 0}
   source: {fileID: 0}
