@@ -1,4 +1,7 @@
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -31,6 +34,13 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private RectTransform populationBar;
 	[SerializeField] private RectTransform orderBar;
 	[SerializeField] private RectTransform integrityBar;
+	[Header("Game Over Stuff")]
+	[SerializeField] private GameObject gameOver;
+	[SerializeField] private TextMeshProUGUI gameOverReason;
+	[SerializeField] private Sound gameOverSound;
+	[SerializeField] private Color peepsColor, orderColor, integrityColor;
+
+	private bool lostGame = false;
 
 	float populationWidth, orderWidth, integrityWidth, populationHeight, orderHeight, integrityHeight;
 
@@ -56,9 +66,22 @@ public class GameManager : MonoBehaviour
 		populationHeight = populationBar.rect.height;
 		orderHeight = populationBar.rect.height;
 		integrityHeight = populationBar.rect.height;
+
+		gameOver.SetActive(false);
 	}
 
-	public void Register(BuildingScript building)
+    private void Update()
+    {
+		if (lostGame)
+		{
+			if (Input.GetKeyDown(KeyCode.Space))
+				SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+			else if (Input.GetKeyDown(KeyCode.Escape))
+				SceneManager.LoadScene(0);
+		}
+	}
+
+    public void Register(BuildingScript building)
 	{
 		building.StateComponent.OnStateChange.AddListener(OnBuildingStateChanged);
 		building.StateComponent.OnStateEnter.AddListener(OnBuildingStateEnterOrder);
@@ -95,7 +118,7 @@ public class GameManager : MonoBehaviour
 
 		if (notOrderAmount >= ratioOrder * totalOrderAmount)
 		{
-			Lose();
+			Lose(2);
 		}
 	}
 	
@@ -124,7 +147,7 @@ public class GameManager : MonoBehaviour
 
 		if (notOrderAmount >= ratioOrder * totalOrderAmount)
 		{
-			Lose();
+			Lose(0);
 		}
 	}
 	
@@ -166,7 +189,7 @@ public class GameManager : MonoBehaviour
 		integrity = 1f - (float) damagedBuildingAmount / (ratioIntegrity * (float) totalBuildingAmount);
 		if (damagedBuildingAmount >= (ratioIntegrity * (float) totalBuildingAmount))
 		{
-			Lose();
+			Lose(1);
 		}
 	}
 	#endregion
@@ -191,14 +214,37 @@ public class GameManager : MonoBehaviour
 
 		if (damagedPeepsAmount >= (ratioPeeps * (float) totalPeepsAmount))
 		{
-			Lose();
+			Lose(0);
 		}
 	}
 	
 	#endregion
 
-	private void Lose()
+	private void Lose(int loseCondition)
 	{
-		Debug.Log("Lose");
+		gameOver.SetActive(true);
+		// 0 Peeps Lose
+		// 1 Integrity Lose
+		// 2 Order Lose
+		switch (loseCondition)
+		{
+			case 0:
+				gameOverReason.text = "ashford is now a ghost town";
+				gameOverReason.color = peepsColor;
+				break;
+			case 1:
+				gameOverReason.text = "ashford was reduced to rubble";
+				gameOverReason.color = integrityColor;
+				break;
+			case 2:
+				gameOverReason.text = "ashford was lost to crime";
+				gameOverReason.color = orderColor;
+				break;
+		}
+
+		if (gameOverSound != null)
+			AudioManager.instance.Play(gameOverSound, true);
+
+		lostGame = true;
 	}
 }
