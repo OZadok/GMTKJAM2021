@@ -295,6 +295,8 @@ public class CarMovement : MonoBehaviour
 
     private void CollisionWithPeep(Collision2D collision)
     {
+        collision.gameObject.GetComponent<HitEffects>().GetHit();
+
         if (collision.relativeVelocity.sqrMagnitude <
             speedToCollidePeep * speedToCollidePeep)
         {
