@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 6200136968335250908}
   - component: {fileID: 8984203922284627780}
   - component: {fileID: 8462781382522018667}
-  m_Layer: 6
+  - component: {fileID: 4421968499018318514}
+  m_Layer: 11
   m_Name: Crosswalk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,3 +110,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 3}
   m_EdgeRadius: 0
+--- !u!114 &4421968499018318514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674465938979390664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e015f4c977fc6841b8c2c142a36efa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SidewalkMask:
+    serializedVersion: 2
+    m_Bits: 64
+  UpSidewalk: {fileID: 0}
+  DownSidewalk: {fileID: 0}
