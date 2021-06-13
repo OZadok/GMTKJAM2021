@@ -33239,6 +33239,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Police
       objectReference: {fileID: 0}
+    - target: {fileID: 5509850741308571110, guid: d354da6c07e372f4e8bde97614461beb, type: 3}
+      propertyPath: m_EdgeRadius
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d354da6c07e372f4e8bde97614461beb, type: 3}
 --- !u!1001 &1352481892
@@ -44548,6 +44552,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2508628258802127610, guid: d356808ee18b8b841914952711e9b4e2, type: 3}
+      propertyPath: m_EdgeRadius
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8719899261699514952, guid: d356808ee18b8b841914952711e9b4e2, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -44776,6 +44784,10 @@ PrefabInstance:
     - target: {fileID: 825182730860638050, guid: c87214fcd38e20247ab2dc48aa03e057, type: 3}
       propertyPath: m_Name
       value: Fire Truck
+      objectReference: {fileID: 0}
+    - target: {fileID: 5809816571159125970, guid: c87214fcd38e20247ab2dc48aa03e057, type: 3}
+      propertyPath: m_EdgeRadius
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7295486222734422948, guid: c87214fcd38e20247ab2dc48aa03e057, type: 3}
       propertyPath: m_RootOrder

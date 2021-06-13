@@ -310,8 +310,8 @@ MonoBehaviour:
     maxDepth: 1e+10
     minNormalAngle: -1e+10
     maxNormalAngle: 1e+10
-  minTimeToSpread: 10
-  maxTimeToSpread: 15
+  minTimeToSpread: 7.5
+  maxTimeToSpread: 12.5
   canStartEffect: 0
 --- !u!61 &4252116758751870167
 BoxCollider2D:
@@ -541,7 +541,7 @@ MonoBehaviour:
   stateComponent: {fileID: 6347826612652941482}
   fromState: 1
   toState: 3
-  timeToMove: 5
+  timeToMove: 15
   soundToPlayOnMove: {fileID: 11400000, guid: b5eab9f20c16fcb4e839e2bea54cf930, type: 2}
   screenShakeAmplitude: 0
 --- !u!114 &2349245606501537600
@@ -559,7 +559,7 @@ MonoBehaviour:
   stateComponent: {fileID: 6347826612652941482}
   fromState: 3
   toState: 4
-  timeToMove: 10
+  timeToMove: 15
   soundToPlayOnMove: {fileID: 11400000, guid: b5eab9f20c16fcb4e839e2bea54cf930, type: 2}
   screenShakeAmplitude: 0
 --- !u!58 &4317064370478621490
