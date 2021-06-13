@@ -118,6 +118,7 @@ MonoBehaviour:
   toState: 4
   timeToMove: 20
   soundToPlayOnMove: {fileID: 11400000, guid: d6849fe6bf371fc4f8277802e0520ec7, type: 2}
+  screenShakeAmplitude: 3
 --- !u!114 &5062093672664968630
 MonoBehaviour:
   m_ObjectHideFlags: 0
