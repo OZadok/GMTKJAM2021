@@ -9,6 +9,8 @@ public class EffectVisualsContainer : ScriptableObject
 	public EffectVisuals regularEffect;
 	public EffectVisuals fireEffect;
 	public EffectVisuals criminalEffect;
+	public EffectVisuals damagedEffect;
+	public EffectVisuals destroyedEffect;
 	
 	private EffectVisuals temp;
 
@@ -25,9 +27,9 @@ public class EffectVisualsContainer : ScriptableObject
 			State.Regular => regularEffect,
 			State.OnFire => fireEffect,
 			State.Criminal => criminalEffect,
-			// State.Damaged => temp,
-			// State.Destroyed => temp,
-			// _ => temp
+			State.Damaged => damagedEffect,
+			State.Destroyed => destroyedEffect,
+			_ => regularEffect
 		};
 	}
 }

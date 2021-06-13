@@ -11,6 +11,9 @@ public class PeepAiController : MonoBehaviour
     [Header("References")]
     [SerializeField] private TrailRenderer[] tireMarks;
 
+    [SerializeField] private StateComponent stateComponent;
+    [SerializeField] private PeepMovement movement;
+
     [Header("Parameters")] 
     [SerializeField] private float castDistance;
 
@@ -20,7 +23,28 @@ public class PeepAiController : MonoBehaviour
     private Vector2 RightDirection => transform.TransformDirection(1, 1, 0);
     private Vector2 LeftDirection => transform.TransformDirection(-1, 1, 0);
 
-    private bool lastSideHitisRight;
+    private bool lastSideHitIsRight;
+    
+    private void Start()
+    {
+        stateComponent.OnStateChange.AddListener(OnStateChangeEnter);
+    }
+
+    private void OnStateChangeEnter(State state)
+    {
+        switch (state)
+        {
+            case State.Damaged:
+                movement.Speed = movement.InitialState / 2f;
+                break;
+            case State.Destroyed:
+                movement.Speed = 0;
+                break;
+            default:
+                movement.Speed = movement.InitialState;
+                break;
+        }
+    }
 
     private void FixedUpdate()
     {
@@ -29,11 +53,11 @@ public class PeepAiController : MonoBehaviour
         var hitLeft = GetHit( LeftDirection);
         
         toMoveForward = !hitForward;
-        horizontal = hitRight ? -1 : hitLeft ? 1 : toMoveForward ? 0 : lastSideHitisRight ? -1 : 1;
+        horizontal = hitRight ? -1 : hitLeft ? 1 : toMoveForward ? 0 : lastSideHitIsRight ? -1 : 1;
 
         if (hitRight || hitLeft)
         {
-            lastSideHitisRight = hitRight;
+            lastSideHitIsRight = hitRight;
         }
     }
 

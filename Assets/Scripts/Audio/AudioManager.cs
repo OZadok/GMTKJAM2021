@@ -40,25 +40,6 @@ public class AudioManager : MonoBehaviour
 
 	}
 
-	public void Play(string sound, bool playOnce)
-	{
-		Sound s = sounds.Find(item => item.name == sound);
-		if (s == null)
-		{
-			Debug.LogWarning("Sound: " + name + " not found!");
-			return;
-		}
-
-		s.source.volume = s.volume * (1f + UnityEngine.Random.Range(-s.volumeVariance / 2f, s.volumeVariance / 2f));
-		s.source.pitch = s.pitch * (1f + UnityEngine.Random.Range(-s.pitchVariance / 2f, s.pitchVariance / 2f));
-
-		if(!playOnce)
-			s.source.Play();
-		else 
-		if(!s.source.isPlaying)
-			s.source.Play();
-	}
-
 	public void Play(Sound sound, bool playOnce)
 	{
 		Sound s = sounds.Find(item => item == sound);
@@ -71,11 +52,13 @@ public class AudioManager : MonoBehaviour
 		s.source.volume = s.volume * (1f + UnityEngine.Random.Range(-s.volumeVariance / 2f, s.volumeVariance / 2f));
 		s.source.pitch = s.pitch * (1f + UnityEngine.Random.Range(-s.pitchVariance / 2f, s.pitchVariance / 2f));
 
-		if (!playOnce)
+		if (!playOnce || (playOnce && !s.source.isPlaying))
+		{
+			if (s.randomizedClip.Length > 0)
+				s.source.clip = s.randomizedClip[UnityEngine.Random.Range(0, s.randomizedClip.Length)];
+			
 			s.source.Play();
-		else
-		if (!s.source.isPlaying)
-			s.source.Play();
+		}
 	}
 
 	public void Stop(string sound)

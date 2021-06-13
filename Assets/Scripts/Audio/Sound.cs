@@ -4,8 +4,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Sound", menuName = "Audio Manager Sound")]
 public class Sound : ScriptableObject
 {
-
+	[Tooltip("If the RandomizedClip array has more than one sound, the game will randomly pick one of them and play it every time the Play() function is called on this sound, ignoring this clip property.")]
 	public AudioClip clip;
+	public AudioClip[] randomizedClip;
 
 	[Range(0f, 1f)]
 	public float volume = .75f;

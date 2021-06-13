@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4574775859941566100}
   - component: {fileID: 6700648478454389786}
   - component: {fileID: 5920804685093312426}
+  - component: {fileID: 8812783406346255578}
   m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
@@ -106,6 +107,7 @@ MonoBehaviour:
   destroyed_sprites: []
   randomizeRotation: 0
   randomizeFlip: 0
+  stateComponent: {fileID: 0}
 --- !u!95 &6700648478454389786
 Animator:
   serializedVersion: 3
@@ -137,6 +139,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 951bff0a50bb155499548ef1cadf924f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8812783406346255578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112885745693376124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59b6b522cd8f56e498d541e492d29436, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateComponent: {fileID: 6347826612652941482}
+  animator: {fileID: 6700648478454389786}
 --- !u!1 &354532744720177646
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,6 +366,8 @@ GameObject:
   - component: {fileID: 4728743971183599563}
   - component: {fileID: 6347826612652941482}
   - component: {fileID: 1002933682570383274}
+  - component: {fileID: 140752749018078354}
+  - component: {fileID: 2349245606501537600}
   m_Layer: 7
   m_Name: Peep
   m_TagString: Untagged
@@ -388,7 +406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody2D: {fileID: 4728743971183599563}
   peepController: {fileID: 4728743971183599556}
-  speed: 1
+  initialSpeed: 1
   turnFactor: 180
 --- !u!114 &4728743971183599556
 MonoBehaviour:
@@ -403,6 +421,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tireMarks: []
+  stateComponent: {fileID: 6347826612652941482}
+  movement: {fileID: 4728743971183599557}
   castDistance: 0.8
   sidewalk:
     serializedVersion: 2
@@ -461,3 +481,37 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.25
+--- !u!114 &140752749018078354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4728743971183599562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a718494f132c2746b04ff3198563d0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateComponent: {fileID: 6347826612652941482}
+  fromState: 1
+  toState: 3
+  timeToMove: 5
+  soundToPlayOnMove: {fileID: 11400000, guid: b5eab9f20c16fcb4e839e2bea54cf930, type: 2}
+--- !u!114 &2349245606501537600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4728743971183599562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a718494f132c2746b04ff3198563d0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateComponent: {fileID: 6347826612652941482}
+  fromState: 3
+  toState: 4
+  timeToMove: 10
+  soundToPlayOnMove: {fileID: 11400000, guid: b5eab9f20c16fcb4e839e2bea54cf930, type: 2}

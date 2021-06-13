@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1968997527236220900}
   - component: {fileID: 5490500409054245468}
   - component: {fileID: 8321911995671461165}
+  - component: {fileID: 7942225383208163233}
   m_Layer: 9
   m_Name: Building
   m_TagString: Untagged
@@ -99,6 +100,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &7942225383208163233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137379821282057131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a718494f132c2746b04ff3198563d0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateComponent: {fileID: 1968997527236220900}
+  fromState: 1
+  toState: 4
+  timeToMove: 25
+  soundToPlayOnMove: {fileID: 11400000, guid: d6849fe6bf371fc4f8277802e0520ec7, type: 2}
 --- !u!1 &4162557886320404028
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,6 +319,7 @@ MonoBehaviour:
   - {fileID: 1930162989561925762, guid: 4eff25e1d39560f48ab50024d1522805, type: 3}
   randomizeRotation: 0
   randomizeFlip: 0
+  stateComponent: {fileID: 1968997527236220900}
 --- !u!331 &6502237518560774929
 SpriteMask:
   m_ObjectHideFlags: 0
