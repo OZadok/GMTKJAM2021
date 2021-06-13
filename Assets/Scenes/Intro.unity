@@ -567,7 +567,7 @@ MonoBehaviour:
   typewriterDelay: 0.02
   TextUI: {fileID: 2095510783}
   slideshowImage: {fileID: 41161302}
-  nextScene: 
+  nextScene: SampleScene
   keyboardClick: {fileID: 11400000, guid: 3acf609bcb460404fb81245fa80e9b3b, type: 2}
   whiteNoise: {fileID: 11400000, guid: f09eeb73a4be47c48956d40b3a852582, type: 2}
 --- !u!4 &1682191813
