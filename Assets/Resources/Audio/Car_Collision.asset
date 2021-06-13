@@ -16,7 +16,7 @@ MonoBehaviour:
   randomizedClip:
   - {fileID: 8300000, guid: 928a87b55bd50d547b642685a9485459, type: 3}
   - {fileID: 8300000, guid: cdefdd74ac41eba4ca8954a2e1c24283, type: 3}
-  volume: 0.35
+  volume: 0.4
   volumeVariance: 0
   pitch: 1
   pitchVariance: 0.25
