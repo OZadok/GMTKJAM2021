@@ -1,5 +1,20 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &6878611355814522375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703999202402274646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6112a7661009f4d4e95e6f2b50bf995a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioFile: {fileID: 11400000, guid: cfcf61aafc08c1a41a5c67f9bab72bf6, type: 2}
+  playOnce: 1
+  chance: 1
 --- !u!1001 &4782361795797443131
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7,6 +22,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 153573043713388713, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
+      propertyPath: chance
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 544022457271427637, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -33,7 +52,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6195702427369041773, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
       propertyPath: m_Name
-      value: Police
+      value: Police - Player Controllled Car Variant Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6195702427369041774, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
       propertyPath: m_Mass
@@ -149,3 +168,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
+--- !u!1 &1703999202402274646 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6195702427369041773, guid: 2d91ff2d8b12a034e895035a4a5aecf2, type: 3}
+  m_PrefabInstance: {fileID: 4782361795797443131}
+  m_PrefabAsset: {fileID: 0}
