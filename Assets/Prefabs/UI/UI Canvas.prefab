@@ -72,10 +72,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 8
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 960, y: 540}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -126,5 +126,5 @@ MonoBehaviour:
   - condition: 6
     textAsset: {fileID: 4900000, guid: 8f2cf3b7fd933ef46aa1ce2152444c9c, type: 3}
   textBoxPrefab: {fileID: 7988925046471721028, guid: 5f77769fe17d4ad49af97d2061baf01f, type: 3}
-  messageChance: 15
+  messageChance: 10
   popSound: {fileID: 11400000, guid: 788b7dc2bba899641b5d181c64abea40, type: 2}

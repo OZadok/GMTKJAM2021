@@ -287,7 +287,7 @@ public class CarMovement : MonoBehaviour
         }
         
         AudioManager.instance.Play(rammingSound, true);
-        //CameraManager.Shake(2,5,0.1f);
+        CameraManager.Shake(1,5,0.1f);
         collision.gameObject.GetComponent<HitEffects>().GetHit();
     }
 
