@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8922583409133537103}
   - component: {fileID: 4466678358146396996}
   - component: {fileID: 3243207057309697458}
+  - component: {fileID: 2401858042343895189}
   m_Layer: 7
   m_Name: FixClock
   m_TagString: Untagged
@@ -75,6 +76,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2401858042343895189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6248401802807260151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76cd6122640b74f42a6492008eabbb0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clockImage: {fileID: 3243207057309697458}
+  StateComponent: {fileID: 0}
 --- !u!1 &8078766793258385686
 GameObject:
   m_ObjectHideFlags: 0

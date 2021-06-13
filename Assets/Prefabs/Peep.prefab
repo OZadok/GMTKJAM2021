@@ -511,6 +511,12 @@ MonoBehaviour:
   OnStateChange:
     m_PersistentCalls:
       m_Calls: []
+  OnStateEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStateExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!58 &1002933682570383274
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -599,6 +605,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7926069309064238031}
     m_Modifications:
+    - target: {fileID: 2401858042343895189, guid: 0b85200c9eafb59468bf0d20ffb0e87d, type: 3}
+      propertyPath: StateComponent
+      value: 
+      objectReference: {fileID: 6347826612652941482}
     - target: {fileID: 3243207057309697458, guid: 0b85200c9eafb59468bf0d20ffb0e87d, type: 3}
       propertyPath: m_FillAmount
       value: 1

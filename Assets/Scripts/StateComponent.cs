@@ -56,6 +56,19 @@ public class StateComponent : MonoBehaviour
 	{
 		CurrentState = State.OnFire;
 	}
+
+	public UnityAction<float> OnStartFix;
+	public UnityAction OnStopFix;
+
+	public void StartFix(float timeToFix)
+	{
+		OnStartFix?.Invoke(timeToFix);
+	}
+
+	public void StopFix()
+	{
+		OnStopFix?.Invoke();
+	}
 }
 
 public enum State

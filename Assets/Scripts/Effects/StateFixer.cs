@@ -34,6 +34,7 @@ public class StateFixer : MonoBehaviour
 		{
 
 			stateComponentTimes[0].StateComponent.CurrentState = State.Regular;
+			stateComponentTimes[0].StateComponent.StopFix();
 			stateComponentTimes.RemoveAt(0);
 		}
 	}
@@ -65,6 +66,7 @@ public class StateFixer : MonoBehaviour
 			Collider = other, StateComponent = stateComponent, startTime = Time.time
 		};
 		stateComponentTimes.Add(stateComponentTime);
+		stateComponent.StartFix(timeToFix);
 	}
 
 	private void OnTriggerExit2D(Collider2D other)
@@ -72,6 +74,7 @@ public class StateFixer : MonoBehaviour
 		var index = stateComponentTimes.FindIndex(x => x.Collider == other);
 		if (index != -1)
 		{
+			stateComponentTimes[index].StateComponent.StopFix();
 			stateComponentTimes.RemoveAt(index);
 		}
 	}

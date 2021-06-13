@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu]
 public class EffectVisuals : ScriptableObject
@@ -12,10 +13,15 @@ public class EffectVisuals : ScriptableObject
 	public void Set(GameObject gameObject)
 	{
 		var spriteRenderers = gameObject.GetComponentsInChildren<SpriteRenderer>();
+		var images = gameObject.GetComponentsInChildren<Image>();
 		var particleSystems = gameObject.GetComponentsInChildren<ParticleSystem>();
 		foreach (var spriteRenderer in spriteRenderers)
 		{
 			spriteRenderer.sharedMaterial = Material;
+		}
+		foreach (var image in images)
+		{
+			image.material = Material;
 		}
 		foreach (var particleSystem in particleSystems)
         {
