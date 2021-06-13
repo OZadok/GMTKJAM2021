@@ -274,6 +274,8 @@ public class CarMovement : MonoBehaviour
     
     private void CollisionWithBuilding(Collision2D collision)
     {
+        collision.gameObject.GetComponent<HitEffects>().GetHit();
+        
         if (collision.relativeVelocity.sqrMagnitude <
             speedToCollideBuilding * speedToCollideBuilding)
         {
@@ -288,7 +290,7 @@ public class CarMovement : MonoBehaviour
         
         AudioManager.instance.Play(rammingSound, true);
         CameraManager.Shake(1,5,0.1f);
-        collision.gameObject.GetComponent<HitEffects>().GetHit();
+        
     }
 
     private void CollisionWithPeep(Collision2D collision)
