@@ -147,6 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StateComponent: {fileID: 1968997527236220900}
+  Collider: {fileID: 5490500409054245468}
 --- !u!1 &4162557886320404028
 GameObject:
   m_ObjectHideFlags: 0
