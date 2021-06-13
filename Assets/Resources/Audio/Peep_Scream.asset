@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb69aa2d8f498d1469805473a77181f0, type: 3}
+  m_Name: Peep_Scream
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 70b1c242108dcbf4880e50cb358b3d8b, type: 3}
+  randomizedClip:
+  - {fileID: 8300000, guid: 70b1c242108dcbf4880e50cb358b3d8b, type: 3}
+  - {fileID: 8300000, guid: fa3c430683733f7479445ba85ae98a06, type: 3}
+  - {fileID: 8300000, guid: fad713ca420a7b54385336ff5cbf4e66, type: 3}
+  - {fileID: 8300000, guid: 1ced854773d98514a86549ae04b9ed04, type: 3}
+  volume: 0.25
+  volumeVariance: 0
+  pitch: 1
+  pitchVariance: 0.1
+  loop: 0
+  mixerGroup: {fileID: 1129067442545850747, guid: 72d522ab6787e9543a7f24e7e3cc97fb, type: 2}
+  source: {fileID: 0}

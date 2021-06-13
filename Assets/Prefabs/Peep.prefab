@@ -495,6 +495,7 @@ MonoBehaviour:
   fromState: 1
   toState: 3
   timeToMove: 5
+  soundToPlayOnMove: {fileID: 11400000, guid: b5eab9f20c16fcb4e839e2bea54cf930, type: 2}
 --- !u!114 &2349245606501537600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -511,3 +512,4 @@ MonoBehaviour:
   fromState: 3
   toState: 4
   timeToMove: 10
+  soundToPlayOnMove: {fileID: 11400000, guid: b5eab9f20c16fcb4e839e2bea54cf930, type: 2}

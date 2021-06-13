@@ -116,6 +116,7 @@ MonoBehaviour:
   fromState: 1
   toState: 4
   timeToMove: 25
+  soundToPlayOnMove: {fileID: 11400000, guid: d6849fe6bf371fc4f8277802e0520ec7, type: 2}
 --- !u!1 &4162557886320404028
 GameObject:
   m_ObjectHideFlags: 0

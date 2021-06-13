@@ -12,7 +12,8 @@ public class StateTimeMover : MonoBehaviour
     [SerializeField] private State fromState;
     [SerializeField] private State toState;
     [SerializeField] private float timeToMove;
-    
+    [SerializeField] private Sound soundToPlayOnMove;
+
     private void Start()
     {
         stateComponent.OnStateChange.AddListener(OnStateChangeEnter);
@@ -39,6 +40,12 @@ public class StateTimeMover : MonoBehaviour
     private IEnumerator MoveToNextState()
     {
         yield return new WaitForSeconds(timeToMove);
+        if (soundToPlayOnMove != null)
+        {
+            AudioManager.instance.Play(soundToPlayOnMove, false);
+            print("Played " + soundToPlayOnMove.name);
+        }
+
         stateComponent.CurrentState = toState;
     }
 }
