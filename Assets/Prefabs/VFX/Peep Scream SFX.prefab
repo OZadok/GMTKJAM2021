@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioFile: {fileID: 11400000, guid: b5eab9f20c16fcb4e839e2bea54cf930, type: 2}
   playOnce: 0
-  chance: 0.15
+  chance: 0.2
 --- !u!114 &5956172193603002773
 MonoBehaviour:
   m_ObjectHideFlags: 0
