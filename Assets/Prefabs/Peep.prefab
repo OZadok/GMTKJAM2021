@@ -311,7 +311,7 @@ MonoBehaviour:
     minNormalAngle: -1e+10
     maxNormalAngle: 1e+10
   minTimeToSpread: 7.5
-  maxTimeToSpread: 12.5
+  maxTimeToSpread: 10
   canStartEffect: 0
 --- !u!61 &4252116758751870167
 BoxCollider2D:
