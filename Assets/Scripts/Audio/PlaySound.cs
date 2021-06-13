@@ -7,13 +7,21 @@ public class PlaySound : MonoBehaviour
     public Sound audioFile;
     [Tooltip("Enables or disables overlap, basically if the sound can play more than once at a time.")]
     public bool playOnce = false;
+    [SerializeField, Range(0.0f, 1.0f)] float chance = 1f;
 
     private void Start()
     {
         if (audioFile != null)
-            AudioManager.instance.Play(audioFile, playOnce);
+        {
+            if (chance > Random.Range(0f, 1f))
+            {
+                AudioManager.instance.Play(audioFile, playOnce);
+            }
+        }
         else
+        {
             Debug.LogError("Tried to play a sound but couldn't find it!");
+        }
     }
 
     private void OnDestroy()

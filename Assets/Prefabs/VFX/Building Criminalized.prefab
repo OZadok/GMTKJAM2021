@@ -4818,9 +4818,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6112a7661009f4d4e95e6f2b50bf995a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioName: 
   audioFile: {fileID: 11400000, guid: 7418c0f181995004fa9ce8b172b131c8, type: 2}
   playOnce: 0
+  chance: 1
 --- !u!114 &8101959861976943011
 MonoBehaviour:
   m_ObjectHideFlags: 0
