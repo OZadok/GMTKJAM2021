@@ -259,6 +259,10 @@ public class CarMovement : MonoBehaviour
             {
                 AudioManager.instance.Play(rammingSound, true);
                 CameraManager.Shake(2,5,0.1f);
+                if (collision.gameObject.tag == "Building")
+                {
+                    collision.gameObject.GetComponent<HitEffects>().GetHit();
+                }
             }
 
             if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Peep"))

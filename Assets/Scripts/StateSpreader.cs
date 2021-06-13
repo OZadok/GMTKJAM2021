@@ -18,6 +18,7 @@ public class StateSpreader : MonoBehaviour
     [SerializeField] private float minTimeToSpread = 5f;
     [SerializeField] private float maxTimeToSpread = 10f;
 
+    [SerializeField] private bool canStartEffect;
     public bool isSpreading => stateComponent.CurrentState == stateToSpread;
 
     // private void OnTriggerEnter2D(Collider2D other)
@@ -39,7 +40,10 @@ public class StateSpreader : MonoBehaviour
     private void Start()
     {
         stateComponent.OnStateChange.AddListener(OnStateChangeEnter);
-        StateManager.Instance.Sign(this);
+        if (canStartEffect)
+        {
+            StateManager.Instance.Sign(this);
+        }
     }
 
     private void OnStateChangeEnter(State state)
