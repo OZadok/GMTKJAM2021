@@ -278,8 +278,8 @@ MonoBehaviour:
     maxDepth: 1e+10
     minNormalAngle: -1e+10
     maxNormalAngle: 1e+10
-  minTimeToSpread: 30
-  maxTimeToSpread: 60
+  minTimeToSpread: 20
+  maxTimeToSpread: 40
   canStartEffect: 1
 --- !u!114 &7339391428839081627
 MonoBehaviour:

@@ -7,6 +7,7 @@ public class PlaySound : MonoBehaviour
     public Sound audioFile;
     [Tooltip("Enables or disables overlap, basically if the sound can play more than once at a time.")]
     public bool playOnce = false;
+    [SerializeField] float chance;
 
     private void Start()
     {
