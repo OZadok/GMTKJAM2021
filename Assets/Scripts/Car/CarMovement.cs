@@ -32,6 +32,10 @@ public class CarMovement : MonoBehaviour
     [SerializeField] private Sound screechSound;
     [SerializeField] private Sound speedingSound, rammingSound, rammingPeepSound;
 
+    [Header("Collisions")]
+    [SerializeField] private float speedToCollideBuilding = 10f;
+    [SerializeField] private float speedToCollidePeep = 5f;
+
     private bool isAligned;
     private bool tierMarksOn;
 
@@ -255,22 +259,14 @@ public class CarMovement : MonoBehaviour
     {
         if (rigidbody2D.velocity.magnitude > 0.1)
         {
-            if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Building"))
+            if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Building") && collision.gameObject.tag == "Building")
             {
-                AudioManager.instance.Play(rammingSound, true);
-                //CameraManager.Shake(2,5,0.1f);
-                if (collision.gameObject.tag == "Building")
-                {
-                    collision.gameObject.GetComponent<HitEffects>().GetHit();
-                }
-
                 CollisionWithBuilding(collision);
             }
 
             if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Peep"))
             {
-                AudioManager.instance.Play(rammingPeepSound, true);
-                CameraManager.Shake(1, 5, 0.1f);
+                
                 CollisionWithPeep(collision);
             }
         }
@@ -278,19 +274,37 @@ public class CarMovement : MonoBehaviour
     
     private void CollisionWithBuilding(Collision2D collision)
     {
+        if (collision.relativeVelocity.sqrMagnitude <
+            speedToCollideBuilding * speedToCollideBuilding)
+        {
+            return;
+        }
+        
         var stateComponent = collision.collider.GetComponent<StateComponent>();
         if (stateComponent)
         {
             stateComponent.CurrentState = State.Destroyed;
         }
+        
+        AudioManager.instance.Play(rammingSound, true);
+        //CameraManager.Shake(2,5,0.1f);
+        collision.gameObject.GetComponent<HitEffects>().GetHit();
     }
 
     private void CollisionWithPeep(Collision2D collision)
     {
-        // Debug.Log("CollisionWithPeep");
+        if (collision.relativeVelocity.sqrMagnitude <
+            speedToCollidePeep * speedToCollidePeep)
+        {
+            return;
+        }
+        
         //change state
         var peepStateComponent = collision.collider.GetComponent<StateComponent>();
         peepStateComponent.CurrentState = State.Damaged;
+        
+        AudioManager.instance.Play(rammingPeepSound, true);
+        CameraManager.Shake(1, 5, 0.1f);
         
         // // get impact
         // var impulse = ComputeTotalImpulse(collision);
@@ -304,7 +318,7 @@ public class CarMovement : MonoBehaviour
         for(int i = 0; i < contactCount; i++) {
             var contact = collision.GetContact(i);
             impulse += contact.normal * contact.normalImpulse;
-            impulse += contact.tangentImpulse * (Vector2)(Quaternion.Euler(0, 0, 90) *contact.normal);
+            // impulse += contact.tangentImpulse * (Vector2)(Quaternion.Euler(0, 0, 90) *contact.normal);
             // impulse.x += contact.tangentImpulse * contact.normal.y;
             // impulse.y -= contact.tangentImpulse * contact.normal.x;
         }
