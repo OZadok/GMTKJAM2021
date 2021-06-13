@@ -277,7 +277,7 @@ MonoBehaviour:
     maxDepth: 1e+10
     minNormalAngle: -1e+10
     maxNormalAngle: 1e+10
-  minTimeToSpread: 10
+  minTimeToSpread: 15
   maxTimeToSpread: 20
 --- !u!61 &4252116758751870167
 BoxCollider2D:

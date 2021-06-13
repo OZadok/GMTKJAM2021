@@ -13974,7 +13974,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8358605331016030805, guid: 1839e6f11d60f8041aea5b38fad9dc22, type: 3}
       propertyPath: startCriminalTime
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8358605331016030806, guid: 1839e6f11d60f8041aea5b38fad9dc22, type: 3}
       propertyPath: m_RootOrder
@@ -34928,7 +34928,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8719899261699514966, guid: d356808ee18b8b841914952711e9b4e2, type: 3}
       propertyPath: turnFactor
-      value: 150
+      value: 125
       objectReference: {fileID: 0}
     - target: {fileID: 8719899261699514966, guid: d356808ee18b8b841914952711e9b4e2, type: 3}
       propertyPath: driftFactor
@@ -35129,7 +35129,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 825182730860638078, guid: c87214fcd38e20247ab2dc48aa03e057, type: 3}
       propertyPath: turnFactor
-      value: 150
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 825182730860638078, guid: c87214fcd38e20247ab2dc48aa03e057, type: 3}
       propertyPath: driftFactor

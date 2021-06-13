@@ -8,6 +8,8 @@ public class EffectVisuals : ScriptableObject
 	public Material Material;
 	public List<GameObject> gameObjectsToSpawn;
 
+	public bool spawnFire;
+
 	public void Set(GameObject gameObject)
 	{
 		var spriteRenderers = gameObject.GetComponentsInChildren<SpriteRenderer>();
@@ -15,10 +17,10 @@ public class EffectVisuals : ScriptableObject
 		{
 			spriteRenderer.sharedMaterial = Material;
 		}
-
 		foreach (var gameObjectToSpawn in gameObjectsToSpawn)
 		{
-			Instantiate(gameObjectToSpawn, gameObject.transform);
+			var spriteRenderer = gameObject.transform.GetComponentInChildren<SpriteRenderer>();
+			Instantiate(gameObjectToSpawn, spriteRenderer.transform);
 		}
 	}
 }
