@@ -20,6 +20,7 @@ public class StateSpreader : MonoBehaviour
 
     [SerializeField] private bool canStartEffect;
     public bool isSpreading => stateComponent.CurrentState == stateToSpread;
+    public bool canSpread => stateComponent.CanMoveToState(stateToSpread);
 
     // private void OnTriggerEnter2D(Collider2D other)
     // {

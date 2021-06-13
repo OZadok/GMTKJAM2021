@@ -78,7 +78,7 @@ public class StateManager : MonoBehaviour
             stateSpreaders.Shuffle();
             foreach (var stateSpreader in stateSpreaders)
             {
-                if (!stateSpreader.isSpreading)
+                if (stateSpreader.canSpread)
                 {
                     stateSpreader.stateComponent.CurrentState = stateSpreader.stateToSpread;
                     if (systemTimer > minimumTimer)
