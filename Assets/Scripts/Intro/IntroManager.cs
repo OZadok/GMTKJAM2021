@@ -21,6 +21,7 @@ public class IntroManager : MonoBehaviour
     [Header("Audio")]
     public Sound keyboardClick;
     public Sound whiteNoise;
+    public Sound newsFlash;
 
     // PRIVATES
     private string tempTxt;
@@ -92,6 +93,8 @@ public class IntroManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         AudioManager.instance.StopAll();
         // THIS ENDS THE INTRO
+        AudioManager.instance.StopAll();
+
         if (nextScene != "")
             SceneManager.LoadScene(nextScene);
         else
@@ -107,6 +110,7 @@ public class IntroManager : MonoBehaviour
         slideshowImage.sprite = slides[5];
         yield return new WaitForSeconds(.5f);
         AudioManager.instance.StopAll();
+        AudioManager.instance.Play(newsFlash, false);
         introEnded = false;
         ShowSlide();
     }

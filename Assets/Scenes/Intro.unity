@@ -570,6 +570,7 @@ MonoBehaviour:
   nextScene: SampleScene
   keyboardClick: {fileID: 11400000, guid: 3acf609bcb460404fb81245fa80e9b3b, type: 2}
   whiteNoise: {fileID: 11400000, guid: f09eeb73a4be47c48956d40b3a852582, type: 2}
+  newsFlash: {fileID: 11400000, guid: e493d146fefcced4cb8b918f7fe9780b, type: 2}
 --- !u!4 &1682191813
 Transform:
   m_ObjectHideFlags: 0

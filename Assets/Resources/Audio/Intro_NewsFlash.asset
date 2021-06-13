@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb69aa2d8f498d1469805473a77181f0, type: 3}
-  m_Name: Fire_Ignite
+  m_Name: Intro_NewsFlash
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: fa9c5a29d47c1c94e93b14bf5e91a5a6, type: 3}
+  clip: {fileID: 8300000, guid: 700c6f21545416447b631f3ded60c3ce, type: 3}
   randomizedClip: []
-  volume: 0.7
+  volume: 0.4
   volumeVariance: 0
   pitch: 1
-  pitchVariance: 0.1
+  pitchVariance: 0
   loop: 0
   mixerGroup: {fileID: 1129067442545850747, guid: 72d522ab6787e9543a7f24e7e3cc97fb, type: 2}
   source: {fileID: 0}
