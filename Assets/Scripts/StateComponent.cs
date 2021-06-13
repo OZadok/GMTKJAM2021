@@ -39,7 +39,7 @@ public class StateComponent : MonoBehaviour
 
 		return CurrentState switch
 		{
-			State.Regular => next == State.Damaged || next == State.OnFire || next == State.Criminal,
+			State.Regular => next == State.Damaged || next == State.OnFire || next == State.Criminal || next == State.Destroyed,
 			State.OnFire => next == State.Damaged || next == State.Regular || next == State.Destroyed,
 			State.Criminal => next == State.Damaged || next == State.Regular || next == State.OnFire,
 			State.Damaged => next == State.Regular || next == State.Destroyed,

@@ -263,6 +263,8 @@ public class CarMovement : MonoBehaviour
                 {
                     collision.gameObject.GetComponent<HitEffects>().GetHit();
                 }
+
+                CollisionWithBuilding(collision);
             }
 
             if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Peep"))
@@ -271,6 +273,15 @@ public class CarMovement : MonoBehaviour
                 CameraManager.Shake(1, 5, 0.1f);
                 CollisionWithPeep(collision);
             }
+        }
+    }
+    
+    private void CollisionWithBuilding(Collision2D collision)
+    {
+        var stateComponent = collision.collider.GetComponent<StateComponent>();
+        if (stateComponent)
+        {
+            stateComponent.CurrentState = State.Destroyed;
         }
     }
 
