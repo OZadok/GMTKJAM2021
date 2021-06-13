@@ -7,6 +7,11 @@ public class TitleController : MonoBehaviour
 {
     public string nextSceneName;
 
+    private void Start()
+    {
+        AudioManager.instance.StopAll();
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
