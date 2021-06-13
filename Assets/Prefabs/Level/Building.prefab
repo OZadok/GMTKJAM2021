@@ -126,7 +126,7 @@ MonoBehaviour:
   fromState: 1
   toState: 4
   timeToMove: 10
-  soundToPlayOnMove: {fileID: 11400000, guid: d6849fe6bf371fc4f8277802e0520ec7, type: 2}
+  soundToPlayOnMove: {fileID: 0}
   screenShakeAmplitude: 0
 --- !u!114 &5062093672664968630
 MonoBehaviour:
@@ -155,6 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StateComponent: {fileID: 1968997527236220900}
   Collider: {fileID: 5490500409054245468}
+  destroyedSound: {fileID: 11400000, guid: d6849fe6bf371fc4f8277802e0520ec7, type: 2}
 --- !u!1 &4162557886320404028
 GameObject:
   m_ObjectHideFlags: 0
