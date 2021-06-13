@@ -610,7 +610,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PRESS ANY ARROW KEY TO START DISASTERIN'
+  m_text: PRESS ARROW KEYS/SPACE TO START DISASTERIN'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e8abe14f98c6b6e4587baf1b12b141be, type: 2}
   m_sharedMaterial: {fileID: 4035418378863244914, guid: e8abe14f98c6b6e4587baf1b12b141be, type: 2}
