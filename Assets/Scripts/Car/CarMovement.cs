@@ -242,6 +242,7 @@ public class CarMovement : MonoBehaviour
             if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Building"))
             {
                 AudioManager.instance.Play(rammingSound, true);
+                CameraManager.Shake(2,5,0.2f);
             }
 
             if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Peep"))
