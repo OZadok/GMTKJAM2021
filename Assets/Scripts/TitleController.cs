@@ -12,7 +12,7 @@ public class TitleController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
                 Application.Quit();
 
-        if(Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+        if(Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0 || Input.GetKeyDown(KeyCode.Space))
                 SceneManager.LoadScene(nextSceneName);
     }
 }
