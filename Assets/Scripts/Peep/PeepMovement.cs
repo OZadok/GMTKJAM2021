@@ -2,23 +2,30 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PeepMovement : MonoBehaviour
 {
     [Header("References")] 
     [SerializeField] private Rigidbody2D rigidbody2D;
     [SerializeField] private PeepAiController peepController;
+    [FormerlySerializedAs("speed")]
     [Header("Parameters")]
-    [SerializeField] private float speed;
+    [SerializeField] private float initialSpeed;
     [Tooltip("the rotation in degrees per second")]
     [SerializeField] private float turnFactor;
-    
+
+    public float InitialState => initialSpeed;
+    public float Speed { get; set; }
+
     private void Awake()
     {
         if (rigidbody2D == null)
         {
             rigidbody2D = GetComponent<Rigidbody2D>();
         }
+
+        Speed = initialSpeed;
     }
 
     private void FixedUpdate()
@@ -34,7 +41,7 @@ public class PeepMovement : MonoBehaviour
 
     private void MoveForward(bool toMove)
     {
-        var velocity = toMove ? transform.up * speed : Vector3.zero;
+        var velocity = toMove ? transform.up * Speed : Vector3.zero;
         rigidbody2D.velocity = velocity;
     }
 
