@@ -355,7 +355,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4728743969614910607
 Transform:
   m_ObjectHideFlags: 0
@@ -402,6 +402,7 @@ GameObject:
   - component: {fileID: 1002933682570383274}
   - component: {fileID: 140752749018078354}
   - component: {fileID: 2349245606501537600}
+  - component: {fileID: 4317064370478621490}
   m_Layer: 7
   m_Name: Peep
   m_TagString: Untagged
@@ -540,7 +541,6 @@ MonoBehaviour:
   fromState: 1
   toState: 3
   timeToMove: 5
-  textboxCondition: 0
   soundToPlayOnMove: {fileID: 11400000, guid: b5eab9f20c16fcb4e839e2bea54cf930, type: 2}
   screenShakeAmplitude: 0
 --- !u!114 &2349245606501537600
@@ -559,6 +559,21 @@ MonoBehaviour:
   fromState: 3
   toState: 4
   timeToMove: 10
-  textboxCondition: 0
   soundToPlayOnMove: {fileID: 11400000, guid: b5eab9f20c16fcb4e839e2bea54cf930, type: 2}
   screenShakeAmplitude: 0
+--- !u!58 &4317064370478621490
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4728743971183599562}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: b916f9c986481ef4d830de7a22d83cd5, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0625, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.125
