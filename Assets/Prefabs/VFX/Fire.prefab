@@ -4822,6 +4822,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioFile: {fileID: 11400000, guid: 3baa17a54ecbc2b4784ba8938b59b996, type: 2}
   playOnce: 1
+  chance: 1
 --- !u!114 &2387192147272478953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4836,6 +4837,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioFile: {fileID: 11400000, guid: b73eaa922426e2b4d8aa5be822c98c82, type: 2}
   playOnce: 0
+  chance: 1
 --- !u!114 &8459241416044315282
 MonoBehaviour:
   m_ObjectHideFlags: 0
