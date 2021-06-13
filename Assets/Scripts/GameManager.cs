@@ -8,12 +8,22 @@ public class GameManager : MonoBehaviour
 	public float integrity; //standing building / buildings amount
 	public float peeps; // peeps alive / total peeps amount
 
+	public int totalOrderAmount => AliveBuildingAmount * orderBuildingWeight + AlivePeepsAmount + orderPeepWeight;
+	public int notOrderAmount;
+
+	public float ratioOrder = 0.5f;
+
+	public int orderBuildingWeight = 10;
+	public int orderPeepWeight = 1;
 
 	public int totalBuildingAmount;
 	public int damagedBuildingAmount;
+	public int AliveBuildingAmount => totalBuildingAmount - damagedBuildingAmount;
 
 	public int totalPeepsAmount;
 	public int damagedPeepsAmount;
+	
+	public int AlivePeepsAmount => totalPeepsAmount - damagedPeepsAmount;
 
 	[SerializeField] private RectTransform populationBar;
 	[SerializeField] private RectTransform orderBar;
@@ -23,14 +33,10 @@ public class GameManager : MonoBehaviour
 
 	private void Awake()
 	{
-		populationWidth = populationBar.rect.width;
-		orderWidth = populationBar.rect.width;
-		integrityWidth= populationBar.rect.width;
-		populationHeight = populationBar.rect.height;
-		orderHeight = populationBar.rect.height;
-		integrityHeight = populationBar.rect.height;
-
 		Instance = this;
+		
+		notOrderAmount = 0;
+		
 		totalBuildingAmount = 0;
 		damagedBuildingAmount = 0;
 
@@ -40,13 +46,106 @@ public class GameManager : MonoBehaviour
 		order = 1f;
 		integrity = 1f;
 		peeps = 1f;
+		
+		populationWidth = populationBar.rect.width;
+		orderWidth = populationBar.rect.width;
+		integrityWidth= populationBar.rect.width;
+		populationHeight = populationBar.rect.height;
+		orderHeight = populationBar.rect.height;
+		integrityHeight = populationBar.rect.height;
 	}
 
 	public void Register(BuildingScript building)
 	{
 		building.StateComponent.OnStateChange.AddListener(OnBuildingStateChanged);
+		building.StateComponent.OnStateEnter.AddListener(OnBuildingStateEnterOrder);
+		building.StateComponent.OnStateExit.AddListener(OnBuildingStateExitOrder);
 		totalBuildingAmount++;
 	}
+	
+	public void Register(PeepScript peep)
+	{
+		peep.StateComponent.OnStateChange.AddListener(OnPeepStateChanged);
+		peep.StateComponent.OnStateEnter.AddListener(OnPeepStateEnterOrder);
+		peep.StateComponent.OnStateExit.AddListener(OnPeepStateExitOrder);
+		totalPeepsAmount++;
+
+		orderBar.sizeDelta = new Vector2(order * integrityWidth, integrityHeight);
+		populationBar.sizeDelta = new Vector2((peeps * populationWidth), populationHeight);
+		integrityBar.sizeDelta = new Vector2((integrity * integrityWidth), integrityHeight);
+	}
+
+	#region Order
+
+	private void OnBuildingStateEnterOrder(State state)
+	{
+		if (state == State.Destroyed)
+		{
+			UpdateOrder();
+		}
+		if (state != State.Criminal)
+		{
+			return;
+		}
+
+		UpdateOrder(orderBuildingWeight);
+
+		if (notOrderAmount >= ratioOrder * totalOrderAmount)
+		{
+			Lose();
+		}
+	}
+	
+	private void OnBuildingStateExitOrder(State state)
+	{
+		if (state == State.Destroyed)
+		{
+			UpdateOrder();
+		}
+		if (state != State.Criminal)
+		{
+			return;
+		}
+
+		UpdateOrder(-orderBuildingWeight);
+	}
+	
+	private void OnPeepStateEnterOrder(State state)
+	{
+		if (state != State.Criminal)
+		{
+			return;
+		}
+
+		UpdateOrder(orderPeepWeight);
+
+		if (notOrderAmount >= ratioOrder * totalOrderAmount)
+		{
+			Lose();
+		}
+	}
+	
+	private void OnPeepStateExitOrder(State state)
+	{
+		if (state != State.Criminal)
+		{
+			return;
+		}
+
+		UpdateOrder(-orderPeepWeight);
+	}
+
+	private void UpdateOrder(int amount = 0)
+	{
+		notOrderAmount += amount;
+		
+		order = 1f - (float) notOrderAmount / (ratioOrder * (float) totalOrderAmount);
+		orderBar.sizeDelta = new Vector2(order * orderWidth, orderHeight);
+	}
+
+	#endregion
+
+	#region Integrity
 
 	private void OnBuildingStateChanged(State state)
 	{
@@ -67,17 +166,11 @@ public class GameManager : MonoBehaviour
 			Lose();
 		}
 	}
+	#endregion
 
-	public void Register(PeepScript peep)
-	{
-		peep.StateComponent.OnStateChange.AddListener(OnPeepStateChanged);
-		totalPeepsAmount++;
 
-		integrityBar.sizeDelta = new Vector2(order * integrityWidth, integrityHeight);
-		populationBar.sizeDelta = new Vector2((peeps * populationWidth), populationHeight);
-		integrityBar.sizeDelta = new Vector2((integrity * integrityWidth), integrityHeight);
-	}
 
+	#region Peeps
 	private void OnPeepStateChanged(State state)
 	{
 		if (state != State.Destroyed)
@@ -98,6 +191,8 @@ public class GameManager : MonoBehaviour
 			Lose();
 		}
 	}
+	
+	#endregion
 
 	private void Lose()
 	{

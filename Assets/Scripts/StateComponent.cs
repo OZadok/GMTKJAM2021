@@ -18,12 +18,16 @@ public class StateComponent : MonoBehaviour
 			{
 				return;
 			}
+			OnStateExit.Invoke(currentState);
 			currentState = value;
 			OnStateChange.Invoke(currentState);
+			OnStateEnter.Invoke(currentState);
 		}
 	}
 
 	public StateEvent OnStateChange;
+	public StateEvent OnStateEnter;
+	public StateEvent OnStateExit;
 
 	private void Start()
 	{
